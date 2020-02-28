@@ -1,0 +1,17 @@
+<!-- Page -->
+<% let BACKEND = sails.config.custom.BACKEND %>
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <%- partial('../../partials/filter.ejs') %>
+                <div class="table-responsive">
+                    <%- partial('./_list-parent.ejs') %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% block('localScripts', '<script src="/vendors/sweetalert/sweetalert.min.js"></script>') %>
+<% block('localScripts', '<script src="/js/backend/parent/list.js"></script>') %>

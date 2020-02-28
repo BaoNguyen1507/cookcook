@@ -1,0 +1,171 @@
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+    <!-- ============================================================== -->
+    <!-- Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <b>
+          <img src="/images/logo-light.png" alt="Kindie" class="light-logo" />
+        </b>
+        <!-- Logo text -->
+        <span>
+          <!-- Light Logo text -->    
+          <img src="/images/logo-light-text.png" class="light-logo" alt="homepage" />
+        </span>
+      </a>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-collapse">
+      <!-- ============================================================== -->
+      <!-- toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav mr-auto">
+        <!-- This is  -->
+        <li class="nav-item"> <a class="nav-link nav-toggler d-block d-md-none waves-effect waves-dark"
+            href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+        <li class="nav-item"> <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
+            href="javascript:void(0)"><i class="icon-menu"></i></a> </li>
+        <!-- ============================================================== -->
+          <% if (classActive) {%>
+          <li class="nav-item <%= (moduleActive.action == 'backend/student/list') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/student/filter?branchId=<%= branchActive %>&classId=<%= classActive %>&status=&gender="><%= __('Students') %></a>
+          </li>
+          <li class="nav-item <%= (moduleActive.action == 'backend/parent/list') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/parent/filter?branchId=<%= branchActive %>&classId=<%= classActive %>&status="><%= __('Parent') %></a>
+          </li>
+          <li class="nav-item <%= (moduleActive.action == 'backend/attendent/index') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/attendent/filter?branchId=<%= branchActive %>&classId=<%= classActive %>"><%= __('Attendance') %></a>
+          </li>
+          <li class="nav-item <%= (moduleActive.action == 'backend/pickup/index') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/pickup/filter?branchId=<%= branchActive %>&classId=<%= classActive %>"><%= __('Pickup') %></a>
+          </li>
+          <li class="nav-item <%= (moduleActive.action == 'backend/schedule/index') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/schedule"><%= __('Schedule') %></a>
+          </li>
+          <li class="nav-item <%= (moduleActive.action == 'backend/menu/index') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/menu"><%= __('Menu') %></a>
+          </li>
+          <!-- <li class="nav-item <%= (moduleActive.action == 'backend/report/tuition') ? 'active' : '' %>">
+            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/report/tuition">Học phí</a>
+          </li> -->
+          <%}else{%>
+            <li class="nav-item <%= (moduleActive.action == 'backend/menu/index') ? 'active' : '' %>">
+              <a class="nav-link text-uppercase"><%= currCourseSession.title %></a>
+            </li>
+          <%}%>
+      </ul>
+      <!-- ============================================================== -->
+      <!-- User profile and search -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav my-lg-0">
+        <!-- ============================================================== -->
+        <!-- Comment -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <!-- <img src="<%= userActive.avatar ? userActive.avatar : '/images/avatar2.png'%>" alt="profile"> -->
+            Hi,
+            <span class="nav-profile-name"><%=userActive.firstName + ' ' + userActive.lastName %></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right mailbox animated">
+            <ul>
+              
+              <li>
+                <a class="dropdown-item" href="/backend/account/profile">
+                  <i class="mdi mdi-account text-primary"></i>
+                  <%= __('Profile') %>
+                </a>
+              </li>
+              <!-- <% if (userActive.isSuperAdmin) { %>
+              <li>
+                <a class="dropdown-item" href="/backend/setting">
+                  <i class="mdi mdi-settings text-primary"></i>
+                  <%= __('Settings') %>
+                </a>
+              </li>
+              <% } %> -->
+              <li>
+                <a class="dropdown-item" href="/backend/logout">
+                  <i class="mdi mdi-logout text-primary"></i>
+                  <%= __('Logout') %>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- ============================================================== -->
+        <!-- End Comment -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Messages -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:;" id="2" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"> <i class="ti-settings"></i>
+            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+          </a>
+          <div class="dropdown-menu mailbox dropdown-menu-right animated" aria-labelledby="2">
+            <ul>
+              <li>
+                  <a class="dropdown-item" href="/backend/branch">
+                    <i class="ti-arrow-circle-right"></i>
+                    <%= __('Branches') %>
+                  </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/backend/class">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Classes') %>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/backend/user">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Staff') %>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/backend/food">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Foods') %>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/backend/subject">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Subject') %>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/backend/coursesession">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Session') %>
+                </a>
+              </li>
+              <!-- <li>
+                <a class="dropdown-item" href="/backend/tuition">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Tuition') %>
+                </a>
+              </li>  -->
+              <% if (userActive.isSuperAdmin) { %>
+              <li>
+                <a class="dropdown-item" href="/backend/setting">
+                  <i class="ti-arrow-circle-right"></i>
+                  <%= __('Settings') %>
+                </a>
+              </li>
+              <% } %>
+            </ul>
+          </div>
+        </li>
+        <!-- ============================================================== -->
+        <!-- End Messages -->
+      </ul>
+    </div>
+  </nav>
+</header>

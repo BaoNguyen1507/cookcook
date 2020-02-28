@@ -1,0 +1,158 @@
+<%
+let action = moduleActive.action;
+action = action.replace(/\//g, '-'); //replace '/' by '-';
+//console.log(action);
+%>
+<!-- Filter -->
+<div class="row">
+  <div class="col-12 grid-margin d-flex justify-content-between">
+    <% if (typeof(listTuitionForReport) !== 'undefined') {%>
+      <div class="dropdown float-left mr-3">
+        <button type="button" class="btn btn-primary dropdown-toggle"
+          data-toggle="dropdown" aria-expanded="false">
+          <%= __('Type of tuition') %>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a class="dropdown-item act-trash-group" href="?paid=<%= paid %>">
+            <%= __('All') %>
+          </a>
+          <% _.each(listTuition, function(itemTuition){%>
+          <a class="dropdown-item act-trash-group" href="?paid=<%= paid %>&tuitionId=<%= itemTuition.id %>">
+            <%= itemTuition.title %>
+          </a>
+          <% }) %>
+        </div>
+      </div>
+    <% } else if(webModule.headline != 'Attendent') { %>
+      <div class="dropdown float-left mr-3">
+        <button type="button" class="btn btn-secondary  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <%= __('Action') %>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a class="dropdown-item act-trash-group" href="javascript:void(0)">
+            <%= __('Delete')%>
+          </a>
+        </div>
+      </div>
+    <% } %>
+
+    <% if (typeof(webModule.isUserList) !== 'undefined') {%>
+      <div class="dropdown float-left mr-3">
+        <!-- TYPE USER -->
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+            aria-expanded="false">
+            <%if(type==1){%>
+            <%=__('Teacher')%>
+            <%} else { if(type==3){%>
+            <%=__('Admin')%>
+            <%} else{%>
+            <%=__('Staff')%>
+            <%}}%>
+        </button>
+        <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" href="?userType=1&status=1">
+            <%= __('Teacher') %>
+            </a>
+            <a class="dropdown-item" href="?userType=2&status=1">
+            <%= __('Staff') %>
+            </a>
+            <a class="dropdown-item" href="?userType=3&status=1">
+            <%= __('Admin') %>
+            </a>                                
+        </div>
+        <!-- END TYPE USER -->
+      </div>
+    <% } %>
+    
+        
+    <ul class="nav">
+      <% if(webModule.filters.length > 0){ %>
+        <% for(let i = 0; i < webModule.filters.length; i++) {%>
+          <% let activeStatus = webModule.filters[i].href.split('=');
+          activeStatus = activeStatus[activeStatus.length-1];
+          let isActive = false;
+          if (typeof(listTuitionForReport) !== 'undefined') {
+            isActive = activeStatus == paid ? true : false;
+          } else {
+            isActive = activeStatus == status ? true : false;
+          } %>
+     
+        <% } %>
+      <% } %>
+    </ul>
+  </div>
+</div>
+<% if(webModule.filters.length > 0){ %>
+  <% for(let i = 0; i < webModule.filters.length; i++) {%>
+   
+      <%if(webModule.filters[i].title == 'Branch'){%>
+        <div class="row">
+            <div class="col-md-3">
+                <select id="branch" name="branch" class="form-control js-select2-branch"
+                data-placeholder="<%= __('Choose') %>">
+                <% for(let b = 0; b < webModule.filters[i].branch.length; b++) {%>
+                  <option value="<%= webModule.filters[i].branch[b].id%>">
+                      <%= webModule.filters[i].branch[b].title %>
+                  </option>
+                <%}%>
+                </select>
+              </div>
+              <div class="col-md-3">
+                  <select id="classes" name="classes" class="form-control js-select2-class"
+                  data-placeholder="<%= __('Choose') %>">
+                  <option value="0">Chọn tất cả</option>
+                  <% for(let b = 0; b < classActiveByBranch.length; b++) {%>
+                    <option value="<%= classActiveByBranch[b].id%>">
+                        <%= classActiveByBranch[b].title %>
+                    </option>
+                  <%}%>
+                  </select>
+              </div>
+              <%if(action == 'backend-attendent-index' || action == 'backend-pickup-index'){%>
+              <div class="col-md-3">
+                  <div id="datepicker-popup" class="input-group date datepicker <%= (action == 'backend-pickup-index') ? 'datePickUp' :  'dateAttendent' %>">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon input-group-append border-left">
+                          <span class="mdi mdi-calendar input-group-text"></span>
+                      </span>
+                  </div>
+              </div>
+              
+              <%}%>
+              <%if(action == 'backend-student-list'){%>
+              <div class="col-md-2">
+                <select id="status" name="status" class="form-control js-select2-gender"
+                data-placeholder="<%= __('Choose') %>">
+                  <option value="2">Giới tính</option>
+                  <option value="1">
+                      Nam
+                  </option>
+                  <option value="0">
+                      Nữ
+                  </option>
+                </select>
+              </div>
+              <%}%>
+              <%if(action != 'backend-attendent-index' && action != 'backend-pickup-index'){%>
+              <div class="col-md-2">
+                  <select id="status" name="status" class="form-control js-select2-status"
+                  data-placeholder="<%= __('Choose') %>">
+                    <option value="1">
+                        Active
+                    </option>
+                    <option value="0">
+                        Inactive
+                    </option>
+                  </select>
+              </div>
+              <%}%>
+              <div class="col-md-1">
+                  <button id="branchBtn" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+              
+        </div>
+       
+      <%}%>
+    <% } %>
+  <% } %>
+<!-- End -->

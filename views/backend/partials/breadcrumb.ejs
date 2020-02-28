@@ -1,0 +1,24 @@
+<!-- Bread crumb-->
+<div class="row page-titles">
+    <div class="col-md-3 align-self-center">
+        <h4 class="text-themecolor"><%=webModule.headline%></h4>
+    </div>
+    <div class="col-md-6 align-self-center">
+        
+    </div>
+    <div class="col-md-3 align-self-center text-right">
+        <% if(webModule.actions.length > 0){ %>
+        <div class="d-flex justify-content-end align-items-center"> 
+            <% for(let i = 0; i < webModule.actions.length; i++) {%>
+                <%if(webModule.actions[i].href) { %>
+                <a href="<%- webModule.actions[i].href %>" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> <%- webModule.actions[i].title%></a>
+                <% } %>
+                <%if(webModule.actions[i].modal) { %>
+                <button data-target="<%- webModule.actions[i].modal %>" data-toggle="modal" id="btnAdd" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> <%- webModule.actions[i].title %></button>
+                <%}%>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+</div> 
+<!-- End -->

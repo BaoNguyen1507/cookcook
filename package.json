@@ -20,7 +20,7 @@
     "fcm-node": "^1.5.1",
     "fullcalendar": "^3.10.0",
     "larvitslugify": "^0.11.3",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.13",
     "lower-case": "^1.1.4",
     "make-dir": "^3.0.0",
     "md5": "^2.2.1",

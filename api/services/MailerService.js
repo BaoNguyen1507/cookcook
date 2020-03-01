@@ -1,8 +1,8 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
- * @author thanhvo
- * @create 2017/07/05 11:51
- * @update 2017/07/05 16:54
+ * @copyright 2020 @ group 6
+ * @author baonguyen
+ * @create 2020/03/05 11:51
+ * @update 2020/03/05 16:54
  * @file api/services/ErrorMessages.js
  */
 'use strict';
@@ -22,7 +22,7 @@ const MailerService = {
 			},
 			{
 				to: obj.emailAddress,
-				subject: "Ekid :: Quên mật khẩu"
+				subject: "CookCook :: Quên mật khẩu"
 			},
 			function(err) {console.log(err || "Mail Sent!");}
 		)

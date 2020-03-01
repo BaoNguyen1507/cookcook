@@ -21,9 +21,6 @@ module.exports = {
       type: 'string',
       required: true
     },
-    parent: {                           //Category
-      model: 'taxonomy'
-    },
     postsOfCat: {                 //For Playlists
       collection: 'post',
       via: 'category',

@@ -1,6 +1,6 @@
 /**
  * @copyright 2018 @ ZiniMedia Ltd. Co
- * @author thanhvo
+ * @author baonguyen
  * @create 2017/10/21 09:19
  * @update 2017/10/22 12:14
  */

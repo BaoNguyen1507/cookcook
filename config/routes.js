@@ -9,10 +9,9 @@
  */
 
 var routes_api = require('./routes/api');
-var routes_api_mobile = require('./routes/mobile');
 var routes_socket_mobile = require('./routes/socket');
 
-module.exports.routes = Object.assign(routes_api_mobile.mobile, routes_api.api, routes_socket_mobile.socket, {
+module.exports.routes = Object.assign(routes_api.api, routes_socket_mobile.socket, {
 
 
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
@@ -62,12 +61,6 @@ module.exports.routes = Object.assign(routes_api_mobile.mobile, routes_api.api, 
   'GET /backend/post/add': { action: 'backend/post/form' },
   'GET /backend/post/edit/:id': { action: 'backend/post/form' },
 
-  //ALBUM
-  'GET /backend/album/list': { action: 'backend/album/list' },
-  'GET /backend/album/add': { action: 'backend/album/form' },
-  'GET /backend/album/edit/:id': { action: 'backend/album/form' },
-  'GET /backend/album/view/:id': { action: 'backend/album/view' },
-
   //Notification
   'GET /backend/notification/list': { action: 'backend/notification/list' },
 
@@ -95,32 +88,12 @@ module.exports.routes = Object.assign(routes_api_mobile.mobile, routes_api.api, 
   'GET /backend/student/add': { action: 'backend/student/form' },
   'GET /backend/student/edit/:id': { action: 'backend/student/form' },
 
-  // Pick up
-  'GET /backend/class-:classActive/pickup': { action: 'backend/pickup/index' },
-  'GET /backend/pickup/filter': { action: 'backend/pickup/index' },
-  //PARENT ----- Parent/List
-  'GET /backend/class-:classId/parent': { action: 'backend/parent/list' },
-  'GET /backend/parent/filter': { action: 'backend/parent/list' },
-  'GET /backend/parent/add': { action: 'backend/parent/form' },
-  'GET /backend/parent/edit/:id': { action: 'backend/parent/form' },
-
-
-  //Class
-  'GET /backend/class': { action: 'backend/class/list' },
-
-  //Tuition
-  'GET /backend/tuition': { action: 'backend/tuition/index' },
-  // Tuition check
-  'GET /backend/class-:classActive/report/tuition': { action: 'backend/report/tuition' },
-
   //Food
   'GET /backend/food': { action: 'backend/food/index' },
 
   //Subject
   'GET /backend/subject': { action: 'backend/subject/index' },
 
-  // COURSE SESSION
-  'GET /backend/courseSession': { action: 'backend/courseSession/index' },
 
   //Setting
   'GET /backend/setting': { action: 'backend/setting/index' },
@@ -134,9 +107,6 @@ module.exports.routes = Object.assign(routes_api_mobile.mobile, routes_api.api, 
   'GET /backend/message/class-:id': { action: 'backend/message/detail' },
   'GET /backend/message': { action: 'backend/message/index' },
 
-  //FEE CURRENCY
-  'GET /backend/currency': { action: 'backend/currency/index' },
-
   //FEE ITEM
   'GET /backend/feeItem': { action: 'backend/feeItem/index' },
 
@@ -144,6 +114,4 @@ module.exports.routes = Object.assign(routes_api_mobile.mobile, routes_api.api, 
   'GET /backend/feeInvoice': { action: 'backend/feeInvoice/index' },
   'GET /backend/feeInvoice/add': { action: 'backend/feeInvoice/form' },
 
-  // BRANCH
-  'GET /backend/branch': { action: 'backend/branch/list' },
 });

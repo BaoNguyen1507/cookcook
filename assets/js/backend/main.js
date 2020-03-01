@@ -22,20 +22,20 @@
 
 }(jQuery));
 
-var KINDIE = KINDIE || {};
+var COOKCOOK = COOKCOOK || {};
 //global variable for current backend instance 
 var curBackendEKP;
 
 $(document).ready(function () {
-  KINDIE.signup();
-  KINDIE.login();
-  KINDIE.initPlugins();
-  KINDIE.initialize();
-  KINDIE.forgotPassword();
-  //KINDIE.initChats();
+  COOKCOOK.signup();
+  COOKCOOK.login();
+  COOKCOOK.initPlugins();
+  COOKCOOK.initialize();
+  COOKCOOK.forgotPassword();
+  //COOKCOOK.initChats();
 });
 
-KINDIE.initialize = function () {
+COOKCOOK.initialize = function () {
   console.log(EKPAction);
 
   var pathName = EKPAction;
@@ -52,32 +52,12 @@ KINDIE.initialize = function () {
       curBackendEKP = new IndexDashboardBackendEKP();
       break;
     //------------------------------------------------
-    case 'backend/album/form':
-      curBackendEKP = new IndexFormAlbumBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/album/edit':
-      curBackendEKP = new IndexFormAlbumBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/album/list':
-      curBackendEKP = new IndexListAlbumBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/album/view':
-      curBackendEKP = new IndexViewAlbumBackendEKP();
-      break;
-    //------------------------------------------------
     case 'backend/food/index':
       curBackendEKP = new IndexFoodBackendEKP();
       break;
     //------------------------------------------------
     case 'backend/subject/index':
       curBackendEKP = new IndexSubjectBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/coursesession/index':
-      curBackendEKP = new IndexCourseSessionBackendEKP();
       break;
     //------------------------------------------------
     case 'backend/taxonomy/categories':
@@ -100,14 +80,6 @@ KINDIE.initialize = function () {
     curBackendEKP = new IndexProfileBackendEKP();
     break;
     //------------------------------------------------
-    case 'backend/parent/list':
-      curBackendEKP = new IndexListParentBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/parent/form':
-      curBackendEKP = new FormIndexParentBackendEKP();
-      break;
-    //------------------------------------------------
     case 'backend/setting/index':
       curBackendEKP = new IndexSettingBackendEKP();
       break;
@@ -124,9 +96,7 @@ KINDIE.initialize = function () {
     //   curBackendEKP = new IndexFormScheduleBackendEKP();
     //   break;
     //------------------------------------------------
-    case 'backend/schedule/index':
-      curBackendEKP = new IndexListScheduleBackendEKP();
-      break;
+    
     //------------------------------------------------
     case 'backend/menu/index':
       curBackendEKP = new IndexListMenuBackendEKP();
@@ -140,24 +110,8 @@ KINDIE.initialize = function () {
       curBackendEKP = new IndexAttendentBackendEKP();
       break;
     //------------------------------------------------
-    case 'backend/student/list':
-      curBackendEKP = new IndexListStudentBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/pickup/index':
-      curBackendEKP = new IndexPickUpBackendEKP();
-      break;
-    //------------------------------------------------
     case 'backend/student/form':
       curBackendEKP = new IndexFormStudentBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/student/form':
-      curBackendEKP = new IndexFormStudentBackendEKP();
-      break;
-    //------------------------------------------------
-    case 'backend/class/list':
-      curBackendEKP = new IndexClassBackendEKP();
       break;
     //------------------------------------------------
     case 'backend/tuition/index':
@@ -233,7 +187,7 @@ KINDIE.initialize = function () {
   }
 }
 
-KINDIE.signup = function () {
+COOKCOOK.signup = function () {
   if ($('#frmSignup').length) {
     $('#frmSignup').validator().on('submit', (e) => {
       if (e.isDefaultPrevented()) {
@@ -270,7 +224,7 @@ KINDIE.signup = function () {
   }
 };
 
-KINDIE.login = function () {
+COOKCOOK.login = function () {
   if ($('#frmLogin').length) {
     $('#frmLogin').validator().on('submit', (e) => {
       if (e.isDefaultPrevented()) {
@@ -324,7 +278,7 @@ KINDIE.login = function () {
   }
 };
 
-KINDIE.forgotPassword = function () {
+COOKCOOK.forgotPassword = function () {
   if ($('#frmForgotPassword').length) {
     $('#frmForgotPassword').validator().on('submit', (e) => {
       if (e.isDefaultPrevented()) {
@@ -359,7 +313,7 @@ KINDIE.forgotPassword = function () {
   }
 }
 
-KINDIE.initPlugins = function () {
+COOKCOOK.initPlugins = function () {
   if ($('.preloader').length) {
     $(".preloader").fadeOut();
   }
@@ -398,7 +352,7 @@ KINDIE.initPlugins = function () {
   }
 } 
 
-// KINDIE.initChats = function () {
+// COOKCOOK.initChats = function () {
 //   let userActiveId = $("#right-sidebar").attr('data-userActiveId');
 //   $(".nav-settings").on("click", function() {
 //     $("#right-sidebar").toggleClass("open");

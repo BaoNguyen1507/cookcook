@@ -1,27 +1,22 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
- * @author thanhvo
+ * @copyright 2020 @ group 6
+ * @author baonguyen
  * @create 2017/10/25 09:52
  * @update 2017/10/25 09:52
  * @file api/services/UserService.js
  */
 'use strict';
 
-const ClassService = require('./ClassService');
 
 const fn = {
   fetchData: async options => {
     return await User.find(options)
-      .populate('classes')
-      .populate('albums')
       .populate('post')
       .populate('comments')
       //.populate('avatar');
   },
   fetchDataInOne: async options => {
     return await User.findOne(options)
-      .populate('classes')
-      .populate('albums')
       .populate('post')
       .populate('comments')
       //.populate('avatar');

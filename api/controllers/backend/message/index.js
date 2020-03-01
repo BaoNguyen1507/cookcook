@@ -1,6 +1,5 @@
 const MessageService = require('../../../services/MessageService');
 const MessageDataService = require('../../../services/MessageDataService');
-const ClassService = require('../../../services/ClassService');
 const moment = require('moment');
 /**
  * chat/index.js

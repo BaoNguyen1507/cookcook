@@ -399,5 +399,12 @@
 	"UnDefault": "UnDefault",
 	"Turn on shuttle person info: ": "Turn on shuttle person info: ",
 	"Attendent information": "Attendent information",
-	"Shuttle person?": "Shuttle person?"
+	"Shuttle person?": "Shuttle person?",
+	"North of Viet Name": "North of Viet Name",
+	"Mid of Viet Nam": "Mid of Viet Nam",
+	"South of Viet Nam": "South of Viet Nam",
+	"Email không được để trống": "Email không được để trống",
+	"Định dạng email không hợp lệ": "Định dạng email không hợp lệ",
+	"Số điện thoại phải gồm 10 hoặc 11 chữ số": "Số điện thoại phải gồm 10 hoặc 11 chữ số",
+	"Mật khẩu phải gồm 6 chữ số.": "Mật khẩu phải gồm 6 chữ số."
 }

@@ -19,10 +19,5 @@ module.exports = {
             isIn: [sails.config.custom.TYPE.NEWS_PRIVATE, sails.config.custom.TYPE.NEWS_PUBLIC, sails.config.custom.TYPE.FEE_INVOICE, sails.config.custom.TYPE.ALBUM, sails.config.custom.TYPE.MENU, sails.config.custom.TYPE.SUBJECT, sails.config.custom.TYPE.ATTENDENT, sails.config.custom.TYPE.DAY_OFF,sails.config.custom.TYPE.PICK_UP,],
             defaultsTo: sails.config.custom.TYPE.NEWS_PRIVATE
         },
-        classList: {
-            type: 'json',
-            description: 'List schedule data',
-            defaultsTo: [{"class": '' }]
-        },
     },
 };

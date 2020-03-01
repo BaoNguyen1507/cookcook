@@ -1,5 +1,5 @@
-# Kindie - Kindergarten management application
-Check the document: http://zinisoft.net/kindie/compatibility-requirements/
+# CookCook - Learn to cook a cuisine application
+Check the document: http://group6.net/cookcook/compatibility-requirements/
 
 ## CHANGE LOG
 ### V1.2

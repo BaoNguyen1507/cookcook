@@ -1,6 +1,6 @@
 /**
  * @copyright 2018 @ ZiniMedia Ltd. Co
- * @author thanhvo
+ * @author baonguyen
  * @create 2017/10/21 19:45
  * @update 2017/10/21 19:45
  * @file api/models/Setting.js

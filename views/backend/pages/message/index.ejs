@@ -19,20 +19,7 @@
 					<div class="chat-left-inner" style="height: 666px;">
 						<div class="row">
 							<div class="col-lg-12 js-height-scrollbar mb-2" style="height: 666px;">
-								<ul class="chatonline style-none ps">
-									<% for (let i = 0; i < listClasses.length; i++) {
-										let thumbPath = "/images/logo-mini.png";
-										if (listClasses[i].thumbnail == 1) thumbPath = "/images/lopmam.png"
-										else if (listClasses[i].thumbnail == 2) thumbPath = "/images/lopchoi.png"
-										else if (listClasses[i].thumbnail == 3) thumbPath = "/images/lopla.png"
-										else if (listClasses[i].thumbnail == 4) thumbPath = "/images/lopmaugiao.png"
-										%>
-									<li class="class-chat" data-classId="<%= listClasses[i].id %>" data-classTitle="<%= listClasses[i].title %>" >
-										<a href="/backend/message/class-<%= listClasses[i].id %>"><img src="<%= thumbPath %>" alt="user-img" class=""> <span><%= listClasses[i].title %><small class="text-success"><%= countMember[i] + __(' parent')%></small></span></a>
-									</li>
-									<% } %>
-									<li class="p-20"></li>
-								</ul>
+								
 							</div>
 						</div>
 					</div>
@@ -42,7 +29,7 @@
 				<div class="chat-right-aside">
 					<div class="chat-main-header">
 						<div class="p-3 b-b">
-							<h4 class="box-title"><%= classObj.title %></h4>
+							<h4 class="box-title">Cook</h4>
 						</div>
 					</div>
 					<div class="chat-rbox">

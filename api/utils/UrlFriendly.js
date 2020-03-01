@@ -1,6 +1,6 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
- * @author thanhvo
+ * @copyright 2020 @ group 6
+ * @author baonguyen
  * @create 2017/12/03 12:31
  * @update 2017/12/03 12:31
  * @file api/utils/UrlFriendlyString.js

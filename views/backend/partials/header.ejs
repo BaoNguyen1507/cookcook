@@ -6,13 +6,9 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
         <b>
-          <img src="/images/logo-light.png" alt="Kindie" class="light-logo" />
+          <img src="/images/cookcook.png" alt="CookCook" class="light-logo" />
         </b>
         <!-- Logo text -->
-        <span>
-          <!-- Light Logo text -->    
-          <img src="/images/logo-light-text.png" class="light-logo" alt="homepage" />
-        </span>
       </a>
     </div>
     <!-- ============================================================== -->
@@ -29,33 +25,10 @@
         <li class="nav-item"> <a class="nav-link sidebartoggler d-none d-lg-block d-md-block waves-effect waves-dark"
             href="javascript:void(0)"><i class="icon-menu"></i></a> </li>
         <!-- ============================================================== -->
-          <% if (classActive) {%>
-          <li class="nav-item <%= (moduleActive.action == 'backend/student/list') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/student/filter?branchId=<%= branchActive %>&classId=<%= classActive %>&status=&gender="><%= __('Students') %></a>
-          </li>
-          <li class="nav-item <%= (moduleActive.action == 'backend/parent/list') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/parent/filter?branchId=<%= branchActive %>&classId=<%= classActive %>&status="><%= __('Parent') %></a>
-          </li>
-          <li class="nav-item <%= (moduleActive.action == 'backend/attendent/index') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/attendent/filter?branchId=<%= branchActive %>&classId=<%= classActive %>"><%= __('Attendance') %></a>
-          </li>
-          <li class="nav-item <%= (moduleActive.action == 'backend/pickup/index') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/pickup/filter?branchId=<%= branchActive %>&classId=<%= classActive %>"><%= __('Pickup') %></a>
-          </li>
-          <li class="nav-item <%= (moduleActive.action == 'backend/schedule/index') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/schedule"><%= __('Schedule') %></a>
-          </li>
           <li class="nav-item <%= (moduleActive.action == 'backend/menu/index') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/menu"><%= __('Menu') %></a>
+            <a class="nav-link text-uppercase" href="/backend/menu"><%= __('Menu') %></a>
           </li>
-          <!-- <li class="nav-item <%= (moduleActive.action == 'backend/report/tuition') ? 'active' : '' %>">
-            <a class="nav-link text-uppercase" href="/backend/class-<%= classActive %>/report/tuition">Học phí</a>
-          </li> -->
-          <%}else{%>
-            <li class="nav-item <%= (moduleActive.action == 'backend/menu/index') ? 'active' : '' %>">
-              <a class="nav-link text-uppercase"><%= currCourseSession.title %></a>
-            </li>
-          <%}%>
+         
       </ul>
       <!-- ============================================================== -->
       <!-- User profile and search -->

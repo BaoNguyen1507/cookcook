@@ -54,10 +54,6 @@ module.exports = {
       type: 'string',
       description: 'format YYYY-MM-DD'
     },
-    student: {
-      model: 'student',
-      required: true
-    },
     payments: {
       collection: 'payment',
       via: 'feeInvoice'

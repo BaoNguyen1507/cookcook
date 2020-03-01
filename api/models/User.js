@@ -116,10 +116,7 @@ module.exports = {
       type: 'string',
       description: 'user photo'
     },
-    albums: {
-      collection: 'album',
-      via: 'owner'
-    },
+   
     post: {
       collection: 'post',
       via: 'author'
@@ -127,15 +124,6 @@ module.exports = {
     comments: {
       collection: 'comment',
       via: 'authorCmt'
-    },
-    classes: {
-      collection: 'class',
-      via: 'teacher',
-      through: 'teacher_class'
-    },
-    branch: {
-      model: 'branch',
-      required: true
     }
   }
 };

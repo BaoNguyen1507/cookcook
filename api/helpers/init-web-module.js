@@ -43,33 +43,7 @@ module.exports = {
     }; 
 
     let params = inputs.req.allParams();
-    let currentCourseSession = await CourseSessionService.get({ current: true });
-
-    let listClasses = await ClassService.find({ courseSession: currentCourseSession.id,status: sails.config.custom.STATUS.ACTIVE });
    
-    let listBranches = await BranchService.find({ status: sails.config.custom.STATUS.ACTIVE });
-
-    let sortBranchArr = [];
-
-    // CHECK CLASS AVAILABLE WITH CURRETN SESSION
-    for (let branch of listBranches) {
-      let classAvailable = [];
-      for (let classes of branch.classes) {
-        if (classes.courseSession == currentCourseSession.id) {
-          classAvailable.push(classes)
-        }
-      }  
-      branch.classes = classAvailable;
-      sortBranchArr.push(branch);
-    }
-
-    listBranches = sortBranchArr;
-
-    let objBranch = {
-      'title': sails.__('Branch'),
-      'href': '?branchId=0',
-      'branch': listBranches
-    }
     switch (inputs.req.options.action) {
 
       //---------------------DASHBOARD---------------------
@@ -137,7 +111,6 @@ module.exports = {
         //     'href': '?status=0',
         //     'count': inactive
         //   },
-          objBranch
         ]
         
       break;
@@ -541,8 +514,7 @@ module.exports = {
             'title': sails.__('Inactive'),
             'href': '?status=0',
             'count': inactive
-          },
-          objBranch
+          }
         ]
       break;  
        //---------------------PARENT-FORM---------------------
@@ -573,14 +545,14 @@ module.exports = {
         _default.headline = sails.__('Attendent');
         _default.description = sails.__('Attendent');
         _default.actions = [];
-        _default.filters = [objBranch];
+        _default.filters = [];
       break;
       //---------------------PICKUP---------------------
       case 'backend/pickup/index':
         _default.headline = sails.__('Pickup');
         _default.description = sails.__('Pickup');
         _default.actions = [];
-        _default.filters = [objBranch];
+        _default.filters = [];
       break;          
       //---------------------SCHEDULE---------------------
       case 'backend/schedule/index':

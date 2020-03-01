@@ -14,39 +14,7 @@ action = action.replace(/\//g, '-'); //replace '/' by '-';
             <i class="icon-speedometer"></i><span class="hide-menu"><%= __('Dashboard') %>
           </a>
         </li>
-        <%if(listClasses.length != 0) {%>
-        <li class="nav-item <%= (action == 'backend-student-list' || action == 'backend-attendent-list' || action == 'backend-parent-list' || action == 'backend-menu-index' || action == 'backend-schedule-index' || action == 'backend-report-tuition' || action == 'backend-student-form' || action == 'backend-parent-form') ? 'active' : '' %>">
-            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu"><%= __('Management') %></span></a>
-            <ul aria-expanded="false" class="collapse">
-              <% if (listBranches.length == 0) { %>
-              <li>
-                <a class="waves-effect waves-dark" href="/backend/class/?action=add"><i class="mdi mdi-plus"></i><%= __('Add New') %></a>
-              </li>
-              <% } else {
-                  _.each(listBranches, (itemBranch) => { %>
-                    <%if(itemBranch.classes.length != 0){%>
-                      <li class="nav-item <%= (action == 'backend-student-list' || action == 'backend-attendent-list' || action == 'backend-parent-list' || action == 'backend-menu-index' || action == 'backend-schedule-index' || action == 'backend-report-tuition' || action == 'backend-student-form' || action == 'backend-parent-form') ? 'active' : '' %>"> 
-                          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                            <span class="hide-menu"><%= itemBranch.title %>
-                            </span>
-                          </a>
-                        
-                        <ul aria-expanded="false" class="collapse">
-                          <% _.each(itemBranch.classes, (itemClass) => { %>
-                            <li class="nav-item"> 
-                              <a class="waves-effect waves-dark classOnchange <%=classActive%> <%= (itemClass.id == classActive)  ? 'active' : '' %>"
-                              href="/backend/student/filter?branchId=<%= itemBranch.id %>&classId=<%= itemClass.id %>&status=&gender="><%= itemClass.title %></a>
-                            </li>
-                            <% }) %>
-                        </ul>
-                      </li>
-                          
-                    <%}%>  
-                <% }) %>
-              <%}%>
-            </ul> 
-        </li>
-        <%}%>
+        
         <li class="nav-item <%= (action == 'backend-album-list') ? 'active' : '' %>">
           <a class="waves-effect waves-dark" href="/backend/album/list">
             <i class="ti-image"></i>
@@ -64,21 +32,21 @@ action = action.replace(/\//g, '-'); //replace '/' by '-';
         <li class="nav-item <%= (action == 'backend-post-list' || action == 'backend-post-form' || action == 'backend-taxonomy-categories' || action == 'backend-taxonomy-tag') ? 'active' : '' %>">
           <a class="has-arrow waves-effect waves-dark" aria-expanded="false" href="javascript:void(0)">
             <i class="ti-book"></i>
-            <span class="hide-menu"><%= __('News') %></span>
+            <span class="hide-menu"><%= __('Category') %></span>
             <i class="menu-arrow"></i>
           </a> 
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
                 <a class="waves-effect waves-dark  <%= (action == 'backend-post-list' || action == 'backend-post-form') ? 'active' : '' %>"
-                  href="/backend/post/list"><%= __('All News') %></a>
+                  href="/backend/post/list"><%= __('North of Viet Name') %></a>
               </li>
               <li class="nav-item ">
                 <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-taxonomy-categories') ? 'active' : '' %>"
-                  href="/backend/category"><%= __('Categories') %></a>
+                  href="/backend/category"><%= __('Mid of Viet Nam') %></a>
               </li>
               <li class="nav-item">
                 <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-taxonomy-tag') ? 'active' : '' %>"
-                  href="/backend/tag"><%= __('Tags') %></a>
+                  href="/backend/tag"><%= __('South of Viet Nam') %></a>
               </li>
             </ul> 
         </li>
@@ -97,10 +65,6 @@ action = action.replace(/\//g, '-'); //replace '/' by '-';
               <li class="nav-item">
                 <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-feeInvoice') ? 'active' : '' %>"
                   href="/backend/feeInvoice"><%= __('Fee Payment') %></a>
-              </li>
-              <li class="nav-item">
-                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-currency') ? 'active' : '' %>"
-                  href="/backend/currency"><%= __('Currency') %></a>
               </li>
               <li class="nav-item">
                 <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-fee-collectin-setting') ? 'active' : '' %>"

@@ -1,6 +1,6 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
- * @author thanhvo
+ * @copyright 2020 @ group 6
+ * @author baonguyen
  * @create 2017/10/25 09:52
  * @update 2017/10/25 09:52
  * @file api/services/RoleService.js

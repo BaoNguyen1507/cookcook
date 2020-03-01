@@ -1,6 +1,6 @@
 /**
  * @copyright 2018 @ ZiniMedia Ltd. Co
- * @author thanhvo
+ * @author baonguyen
  * @create 2019/10/21 20:18
  * @update 2019/10/21 20:18
  * @file api/models/Auth.js

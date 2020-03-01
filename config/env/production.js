@@ -75,7 +75,7 @@ module.exports = {
      port: Number(process.env.MONGO_PORT).valueOf() || 27017, // defaults to 27017 if omitted 
      user: process.env.MONGO_USER || '', //optional
      password: process.env.MONGO_PASSWORD || '', //optional
-     database: process.env.MONGO_DB_NAME || 'kindiedb' // or omit if not relevant
+     database: process.env.MONGO_DB_NAME || 'cookcookdb' // or omit if not relevant
     },
 
   },
@@ -255,7 +255,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     onlyAllowOrigins: [
-      'http://kindie.zinisoft.net',
+      'http://cookcook.group6.net',
       // 'http://localhost'
     ],
 
@@ -375,9 +375,9 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'http://kindie.zinisoft.net',
+    baseUrl: 'http://cookcook.group6.net',
     // baseUrl: 'http://localhost',
-    internalEmailAddress: 'support@kindie.zinisoft.net',
+    internalEmailAddress: 'support@cookcook.group6.net',
 
     // mailgunDomain: 'mg.example.com',
     // mailgunSecret: 'key-prod_fake_bd32301385130a0bafe030c',

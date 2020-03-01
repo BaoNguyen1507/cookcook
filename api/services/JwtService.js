@@ -1,5 +1,5 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
+ * @copyright 2020 @ group 6
  * @author DevTeam
  * @create 2019/09/06
  * @update 

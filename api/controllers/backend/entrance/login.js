@@ -59,7 +59,7 @@ and exposed as \`req.me\`.)`
     var userRecord;
     if (inputs.emailAddress.indexOf('@') > -1) {
       userRecord = await User.findOne({
-        emailAddress: inputs.emailAddress.toLowerCase(),
+        emailAddress: inputs.emailAddress.toLowerCase()
       })
     } else {
       userRecord = await User.findOne({
@@ -71,7 +71,6 @@ and exposed as \`req.me\`.)`
     if (!userRecord) {
       throw 'badCombo';
     }
-
     // If the password doesn't match, then also exit thru "badCombo".
     sails.log('-------------------------',inputs.password);
     await sails.helpers.passwords.checkPassword(inputs.password, userRecord.password)

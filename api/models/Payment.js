@@ -29,10 +29,6 @@ module.exports = {
     },
     note: {
       type: 'string'
-    },
-    parent: {
-      model: 'parent',
-      // required: true
     }
   }
 };

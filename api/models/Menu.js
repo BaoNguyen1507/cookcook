@@ -21,10 +21,6 @@ module.exports = {
       isIn: [sails.config.custom.STATUS.TRASH, sails.config.custom.STATUS.DRAFT, sails.config.custom.STATUS.ACTIVE],
       defaultsTo: sails.config.custom.STATUS.ACTIVE
     },
-    class: {
-      model: 'class',
-      // required: true
-    },
     dateUse: {
       type: 'string', /* Ngày áp dụng format YYYY-mm-dd*/
     },

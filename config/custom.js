@@ -428,7 +428,7 @@ module.exports.custom = {
         type: 'medium_large'
       }
     ],
-    PATH_FOLDER: process.env.PATH_FOLDER || '/var/www/web-kindie/'
+    PATH_FOLDER: process.env.PATH_FOLDER || '/var/www/web-cookcook/'
   },
   // SERVER_KEY: 'AAAADnmmGfs:APA91bHTgONg0ngL5YuXXf0EDou5CHD84eA6x9V8TI50UOTndmYs-MNcNy7RSKswcraK1yXYDql5IuIgaxpvlrgbwm795EKvMjuvuAo8YfvzvEDS5jtZ2VKVZALGFBBP9UCc2_qA2zkc'
   SERVER_KEY: 'AAAA7bgzDgw:APA91bG1qK90vtk51m9eAux_JsBRMuIe1N0Jv71qtatLhczAzuXHuLbmujtmrQ47oK6A-AeESJSWeaScCvVYiN7GF5hFjB7PqzKkFdyaHS03fJh5_eZ1rITfWN4dMF9lj5dckMxD17RS',

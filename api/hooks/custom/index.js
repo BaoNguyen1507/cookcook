@@ -213,25 +213,6 @@ will be disabled and/or hidden in the UI.
               });//_∏_  (Meanwhile...)
             }//ﬁ
 
-            //SET REQ COURSE SESSION ACTIVE
-            var listCourseSession = await CourseSession.find({}).sort('createdAt desc');
-            if(listCourseSession.length) {
-              var params = req.allParams(); //courseSessionActive
-              var courseSessionActive = params.courseSessionActive;
-
-              if (courseSessionActive) {
-                let index = listCourseSession.findIndex(item => item.id == courseSessionActive);
-                if (index != -1) {
-                  //courseSessionActive is existed
-                  req.session.courseSessionActive = listCourseSession[index].id;
-                } else {
-                  req.session.courseSessionActive = listCourseSession[0].id;
-                }
-              } else if (!req.session.courseSessionActive) {
-                req.session.courseSessionActive = listCourseSession[0].id;
-              }
-            }
-
             // If this is a GET request, then also expose an extra view local (`<%= me %>`).
             // > Note that we make sure a local named `me` doesn't already exist first.
             // > Also note that we strip off any properties that correspond with protected attributes.

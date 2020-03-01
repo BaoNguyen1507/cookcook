@@ -1,5 +1,5 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
+ * @copyright 2020 @ group 6
  * @author dungha
  * @create 2019/05/28
  * @update 2019/05/28

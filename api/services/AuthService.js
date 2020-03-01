@@ -1,6 +1,6 @@
 /**
- * @copyright 2017 @ ZiniMedia Team
- * @author thanhvo
+ * @copyright 2020 @ group 6
+ * @author baonguyen
  * @create 2017/10/22 12:52
  * @update 2017/10/22 12:52
  * @file api/services/AdminService.js

@@ -1,6 +1,6 @@
 /**
  * @copyright 2018 @ ZiniMedia Ltd. Co
- * @author thanhvo
+ * @author baonguyen
  * @create 2017/12/03 12:31
  * @update 2017/12/03 12:31
  * @file api/utils/add-zero.js

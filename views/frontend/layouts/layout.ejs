@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="<%= lang%>">
+  <head>
+    <title><%=webSettings.value.name%> :: <%=webModule.headline%></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="<%=webSettings.value.description%>">
+    <meta name="author" content="Group6">
+    <% /* Viewport tag for sensible mobile support */ %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon" href="/images/logo-light.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/frontend/stylesheets/font-awesome.css">
+    <link rel="stylesheet" href="/frontend/stylesheets/slick.css">
+    <%- blocks.localCss %>
+    <link rel="stylesheet" href="/frontend/stylesheets/style.css">
+  </head>
+  <body class="wp-menu fixed-layout skin-blue-dark">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">CookCook</p>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <%- partial('../partials/header.ejs') %>
+        <div class="page-wrapper">
+          <div class="container-fluid">
+            <%- body %>
+          </div>
+        </div> 
+        <%- partial('../partials/footer.ejs') %>
+      <script>delete window.self;</script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="/dependencies/sails.io.js"></script>
+      <script src="/vendors/moment/moment.min.js"></script>
+      <script src="/dependencies/lodash.js"></script>
+      <script src="/frontend/javascripts/bootstrap.min.js"></script>
+      <script src="/frontend/javascripts/popper.min.js"></script>
+      <script src="/frontend/javascripts/slick.js"></script>
+      <script src="/js/perfect-scrollbar.jquery.min.js"></script>
+      <!--Custom JavaScript -->
+      <script src="/dependencies/cloud.js"></script>
+      <script src="/js/frontend/cloud.setup.js"></script>
+      <script src="/js/frontend/base.js"></script>
+      <%- blocks.localScripts %>
+      <script src="/frontend/javascripts/customs.js"></script>
+      <script src="/js/i18n.js"></script>
+      <script src="/js/frontend/main.js"></script>
+
+      <script>
+        var EKPAction = '<%=moduleActive.action%>';
+        var layout = 'layout';
+        var UPLOAD = {
+          EXTENSION: ['.png', '.jpg', '.jpeg', '.gif', '.heic']
+        };
+      </script>
+    </div>
+  </body>
+</html>

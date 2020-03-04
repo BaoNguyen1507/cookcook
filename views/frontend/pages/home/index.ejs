@@ -1,0 +1,108 @@
+<% let BACKEND = sails.config.custom.BACKEND %>
+<!-- main content -->
+<main class="main-content">
+    <!-- banner -->
+    <section class="banner">
+      <div class="banner-item" style="background: url(images/cook-background.jpg)">
+        <div class="container">
+          <div class="banner-content">
+            <h2 class="caption">Master Cook</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- e: banner -->
+
+    <!-- section-about -->
+    <section class="section-about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-xl-5">
+            <div class="about-us">
+              <div class="heading">
+                <p class="sub-title">Thông tin chung</p>
+                <h2 class="title">CookCook chuyên gia nấu ăn.</h2>
+              </div>
+              <div class="content-text">
+                Các món ăn đặc biệt từ mọi vùng miền sẽ được chúng tôi tổng hợp và đem đến cho các bạn !
+              </div>
+              <a href="#" class="btn btn-primary"><i class="long-arrow-right"></i> Read more</a>
+            </div>
+          </div>
+          <div class="col-md-5 col-xl-7">
+            <figure class="about-us-figure">
+              <img src="/images/soup.png" alt="Image">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- e: section-about -->
+
+    <!-- section-food -->
+    <section class="section-teacher">
+      <div class="container">
+        <div class="heading">
+          <p class="sub-title text-center">Món</p>
+          <h2 class="title text-center">Bài viết về món ăn</h2>
+        </div>
+        <div class="teachers">
+          <div class="teacher-single">
+            <div class="card-info">
+              <div class="card-info-img">
+                <a href="#"><img src="/images/uploads/2019/phochua.jpg" alt=""></a>
+              </div>
+              <div class="card-info-body">
+                <h3 class="card-info-title">
+                  <a href="#">Phở chua xứ Lạng</a>
+                </h3>
+                <span class="position">Teacher</span>
+                <div class="card-info-text">
+                    Lê Văn Lương quận 7 Hồ chí minh
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center"><a href="#" class="btn btn-primary"><i class="long-arrow-right"></i> Read more</a></div>
+      </div>
+    </section>
+    <!-- e: section-food -->
+
+    <!-- section-contact -->
+    <section class="section-contact">
+      <div class="container">
+        <div class="contact-info">
+          <h3 class="contact-info-title">Contact us</h3>
+          <div class="contact-content">
+            <strong>Corporate headquarters:</strong><br>
+            Lầu 11 Toà nhà Tin Học<br>
+            <strong>Phone:</strong>0832479782<br>
+            <strong>Email:</strong> <a href="mailto: ricarnguyen1507@gmail.com">ricarnguyen1507@gmail.com</a>
+          </div>
+          <div class="contact-form">
+            <h3>Get in Touch</h3>
+            Please fill out the form
+            <form class="forms" action="">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="* Your email address">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Message"></textarea>
+              </div>
+              <button class="btn btn-primary btn-submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="map">
+        <img src="frontend/images/upload/map.png" alt="">
+      </div>
+    </section>
+    <!-- e: section-contact -->
+  </main>
+  <!-- e: main content -->
+<% block('localScripts', '<script src="/js/frontend/dashboard/index.js"></script>') %>

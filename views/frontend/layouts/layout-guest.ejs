@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="<%= lang%>">
+
+<head>
+  <title><%=webSettings.value.name%></title>
+  <% /* Viewport tag for sensible mobile support */ %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="<%=webSettings.value.description%>">
+  <meta name="author" content="ZiniSoft.NET">
+
+  <link rel="icon" href="/images/logo-light.png">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/frontend/stylesheets/font-awesome.css">
+  <link rel="stylesheet" href="/frontend/stylesheets/slick.css">
+  <%- blocks.localCss %>
+  <link rel="stylesheet" href="/frontend/stylesheets/style.css">
+</head>
+
+<body class="skin-default card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">CookCook</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+      <%- body %>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/dependencies/sails.io.js"></script>
+    <script src="/dependencies/lodash.js"></script>
+    <script src="/vendors/moment/moment.min.js"></script>
+    <script src="/frontend/javascripts/bootstrap.min.js"></script>
+    <script src="/frontend/javascripts/popper.min.js"></script>
+    <script src="/frontend/javascripts/slick.js"></script>
+    <!--Custom JavaScript -->
+  
+    <%- blocks.localScripts %>
+    <script src="/frontend/javascripts/customs.js"></script>
+    <script src="/dependencies/cloud.js"></script>
+    <script src="/js/frontend/cloud.setup.js"></script>
+    <script src="/js/frontend/base.js"></script>
+    <script src="/js/frontend/main.js"></script>
+  <script>
+    var EKPAction = '';
+  </script>
+</body>
+
+</html>

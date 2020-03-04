@@ -31,7 +31,7 @@ module.exports.routes = Object.assign(routes_api.api, routes_socket_mobile.socke
   // ADMIN VIEW ZONE
   //==================================
 
-  'GET /': { action: 'backend/view-homepage-or-redirect' },
+  'GET /home': { action: 'frontend/home/index' , locals: { layout: 'frontend/layouts/layout' }},
   'GET /backend': { action: 'backend/dashboard/index' },
 
   'GET /installation/account': { action: 'installation/account', locals: { layout: 'backend/layouts/layout-installation' } },
@@ -58,6 +58,7 @@ module.exports.routes = Object.assign(routes_api.api, routes_socket_mobile.socke
 
   //POST
   'GET /backend/post/list': { action: 'backend/post/list' },
+  'GET /backend/post': { action: 'backend/post/form' },
   'GET /backend/post/add': { action: 'backend/post/form' },
   'GET /backend/post/edit/:id': { action: 'backend/post/form' },
 

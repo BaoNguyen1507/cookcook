@@ -23628,7 +23628,8 @@ a.badge:hover {
 }
 
 .card-title {
-    margin-bottom: .75rem
+    margin-bottom: .75rem;
+    text-align: center;
 }
 
 .card-header,
@@ -45536,7 +45537,7 @@ ul.list-inline li {
     background: #fff;
     padding: 14px 10px;
     box-shadow: 1px 0 20px rgba(0, 0, 0, .08);
-    margin: 0 -25px 25px
+    margin: 0 -25px 25px;
 }
 
 .page-titles h4 {

@@ -17,43 +17,14 @@ module.exports = {
     }
     sails.log('Have this.req.me');
     let _default = await sails.helpers.getDefaultData(this.req);
-    let curDate = moment().format('YYYY-MM-DD');
-    //Post
-    let totalPosts = await Post.count({});
-    let listPosts = await PostService.find({});
-    let totalPostsThisMonth = 0;
-    for (var i = 0; i < listPosts.length; i++) {
-      let month = moment().format('MM');
-      if (moment(listPosts[i].updatedAt).format('MM') === month) {
-        totalPostsThisMonth = totalPostsThisMonth + 1;
-      }
+    let posts = await PostService.find();
+    for (let postObj of posts){
+      let medias = await Media.find({ post: postObj.id });
+      postObj.media = medias;
     }
-    //Album
-    //User
-    let totalUsers = await User.count({ status: sails.config.custom.STATUS.ACTIVE });
-    //Menu & Classes
-    // Notifications
-    let notifications = await Notifications.find({ status: sails.config.custom.STATUS.ACTIVE, type: {in: [sails.config.custom.TYPE.NEWS_PUBLIC, sails.config.custom.TYPE.NEWS_PRIVATE]} }).limit(10).sort([{ createdAt: 'DESC' }]);
-    // Post
-    let posts = await PostService.find({ status: sails.config.custom.STATUS.ACTIVE }, null, null, [{ createdAt: 'DESC' }]);
-    // Birthday by Month
-    let curMonth = moment().format('MM');
-    // webSettings
-    let webSettings = this.res.locals.webSettings;
-    sails.log(webSettings);
     
-    sails.log('===========rangeTime========');
+    let webSettings = this.res.locals.webSettings;
 
-    //Set to _default
-    _default.totalPosts = totalPosts;
-    _default.totalPostsThisWeek = 4;
-    _default.totalPostsThisMonth = totalPostsThisMonth;
-    _default.listPosts = listPosts;
-    _default.listTrendings = listPosts;
-
-    _default.totalUsers = totalUsers;
-
-    _default.notifications = notifications;
 
     _default.posts = posts;
 

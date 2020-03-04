@@ -26,18 +26,12 @@ module.exports = {
   fn: async function (inputs, exits) {
     let posts = {};
     let _default = await sails.helpers.getDefaultData(this.req);
-    _default.manner = (this.req.param('id') == undefined ? 'add' : 'edit');
-    if (_default.manner == 'edit') {
-      posts = await PostService.get({ id: this.req.param('id') });
-    }
-    // PREPARE DATA LIST CATEGORY
-    let listCategory = await TaxonomyService.find({ status: 1, type: 'category' });
-    _default.listCategory = listCategory;
-    // PREPARE DATA LIST TAGS
-    let listTag = await TaxonomyService.find({ status: 1, type: 'tag' });
-    _default.listTag = listTag;
-
-    _default.postsData = posts;
+    let params = this.req.allParams();
+    let postActive = await PostService.get({ id: params.postId });
+    if (!postActive) return ('Bab Request');
+    let medias = await MediaService.find({ post: postActive.id });
+    postActive.media = medias;
+    _default.postsData = postActive;
     return exits.success(_default);
   }
 };

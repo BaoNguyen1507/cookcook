@@ -84,19 +84,19 @@
           <div class="dropdown-menu mailbox dropdown-menu-right animated" aria-labelledby="2">
             <ul>
               <li>
-                  <a class="dropdown-item" href="/backend/branch">
+                  <a class="dropdown-item" href="/backend/post">
                     <i class="ti-arrow-circle-right"></i>
-                    <%= __('Branches') %>
+                    <%= __('Posts') %>
                   </a>
               </li>
               <li>
-                <a class="dropdown-item" href="/backend/class">
+                <a class="dropdown-item" href="/backend/brand">
                   <i class="ti-arrow-circle-right"></i>
-                  <%= __('Classes') %>
+                  <%= __('Brands') %>
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="/backend/user">
+                <a class="dropdown-item" href="/backend/staff">
                   <i class="ti-arrow-circle-right"></i>
                   <%= __('Staff') %>
                 </a>
@@ -107,24 +107,6 @@
                   <%= __('Foods') %>
                 </a>
               </li>
-              <li>
-                <a class="dropdown-item" href="/backend/subject">
-                  <i class="ti-arrow-circle-right"></i>
-                  <%= __('Subject') %>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/backend/coursesession">
-                  <i class="ti-arrow-circle-right"></i>
-                  <%= __('Session') %>
-                </a>
-              </li>
-              <!-- <li>
-                <a class="dropdown-item" href="/backend/tuition">
-                  <i class="ti-arrow-circle-right"></i>
-                  <%= __('Tuition') %>
-                </a>
-              </li>  -->
               <% if (userActive.isSuperAdmin) { %>
               <li>
                 <a class="dropdown-item" href="/backend/setting">

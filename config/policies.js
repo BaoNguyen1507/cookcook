@@ -95,7 +95,7 @@ module.exports.policies = {
     '*': 'is-mobile-authenticated'
   },
 
-  '*': ['is-logged-in', 'init-before-action'],
+  '*': ['init-before-action'],
 
   // Bypass the `is-logged-in` policy for:
   'backend/account/logout': true,

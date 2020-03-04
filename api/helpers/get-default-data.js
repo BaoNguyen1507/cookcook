@@ -20,8 +20,8 @@ module.exports = {
   fn: async function (inputs, exits) {
     sails.log.info("=== helper/get-default-data => START ===========");
     // GET CURRENT SESSION OF BRANCH
-
-
+    const params = inputs.req.allParams();
+    
    
     let _default = await {
       userActive: inputs.req.me,

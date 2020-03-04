@@ -1,0 +1,85 @@
+<%
+let action = moduleActive.action;
+action = action.replace(/\//g, '-'); //replace '/' by '-';
+//console.log(action);
+%>
+<aside class="left-sidebar">
+  <!-- Sidebar scroll-->
+  <div class="scroll-sidebar"> 
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
+        <li class="nav-item <%= (action == 'backend-dashboard-index') ? 'active' : '' %>">
+          <a class="waves-effect waves-dark" href="/backend/dashboard">
+            <i class="icon-speedometer"></i><span class="hide-menu"><%= __('Dashboard') %>
+          </a>
+        </li>
+        
+        <li class="nav-item <%= (action == 'backend-album-list') ? 'active' : '' %>">
+          <a class="waves-effect waves-dark" href="/backend/album/list">
+            <i class="ti-image"></i>
+            <span class="hide-menu"><%= __('Album') %></span>
+          </a>
+        </li>
+
+        <li class="nav-item <%= (action == 'backend-notification-list') ? 'active' : '' %>">
+          <a class="waves-effect waves-dark" href="/backend/notification/list">
+            <i class="ti-announcement"></i>
+            <span class="hide-menu"><%= __('Notification') %></span>
+          </a>
+        </li>
+
+        <li class="nav-item <%= (action == 'backend-post-list' || action == 'backend-post-form' || action == 'backend-taxonomy-categories' || action == 'backend-taxonomy-tag') ? 'active' : '' %>">
+          <a class="has-arrow waves-effect waves-dark" aria-expanded="false" href="javascript:void(0)">
+            <i class="ti-book"></i>
+            <span class="hide-menu"><%= __('Category') %></span>
+            <i class="menu-arrow"></i>
+          </a> 
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="waves-effect waves-dark  <%= (action == 'backend-post-list' || action == 'backend-post-form') ? 'active' : '' %>"
+                  href="/backend/post/list"><%= __('North of Viet Name') %></a>
+              </li>
+              <li class="nav-item ">
+                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-taxonomy-categories') ? 'active' : '' %>"
+                  href="/backend/category"><%= __('Mid of Viet Nam') %></a>
+              </li>
+              <li class="nav-item">
+                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-taxonomy-tag') ? 'active' : '' %>"
+                  href="/backend/tag"><%= __('South of Viet Nam') %></a>
+              </li>
+            </ul> 
+        </li>
+
+        <li class="nav-item <%= (action == 'backend-feeItem' || action == 'backend-feeInvoice' || action == 'backend-fee-collectin-setting' || action == 'backend-currency') ? 'active' : '' %>">
+          <a class="has-arrow waves-effect waves-dark" aria-expanded="false" href="javascript:void(0)">
+            <i class="ti-wallet"></i>
+            <span class="hide-menu"><%= __('Fee Collection') %></span>
+            <i class="menu-arrow"></i>
+          </a> 
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item ">
+                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-feeItem') ? 'active' : '' %>"
+                  href="/backend/feeItem"><%= __('Fee Item') %></a>
+              </li>
+              <li class="nav-item">
+                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-feeInvoice') ? 'active' : '' %>"
+                  href="/backend/feeInvoice"><%= __('Fee Payment') %></a>
+              </li>
+              <li class="nav-item">
+                <a class="waves-effect waves-dark <%= action %> <%= (action == 'backend-fee-collectin-setting') ? 'active' : '' %>"
+                  href="/backend/setting/feeCollection"><%= __('Settings') %></a>
+              </li>
+            </ul> 
+        </li>
+
+        <li class="nav-item <%= (action == 'backend-message') ? 'active' : '' %>">
+          <a class="waves-effect waves-dark" href="/backend/message">
+            <i class="ti-comments"></i>
+            <span class="hide-menu"><%= __('Messenger') %></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

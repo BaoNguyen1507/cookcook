@@ -132,10 +132,13 @@ module.exports = {
           _default.headline = sails.__('Edit post');
           _default.description = sails.__('Edit post');
         } else {
-          _default.headline = sails.__('Add new post');
+          _default.headline = sails.__('Thông tin món ăn');
           _default.description = sails.__('Add new post');
         }
-        _default.actions = [];
+        _default.actions = [{
+          'title': sails.__('Đăng ký khoá học'),
+          'href': '/backend/post/purchase'
+        }];
       break;
       case 'backend/post/list':
         _default.headline = sails.__('Posts');

@@ -133,7 +133,7 @@ module.exports = {
           _default.description = sails.__('Edit post');
         } else {
           _default.headline = sails.__('Thông tin món ăn');
-          _default.description = sails.__('Add new post');
+          _default.description = sails.__('Thêm món ăn');
         }
         _default.actions = [{
           'title': sails.__('Đăng ký khoá học'),
@@ -144,7 +144,7 @@ module.exports = {
         _default.headline = sails.__('Posts');
         _default.description = sails.__('Posts');
         _default.actions = [{
-            'title': sails.__('Add new post'),
+            'title': sails.__('Thêm món ăn'),
             'href': '/backend/post/add'
           }
         ];
@@ -702,6 +702,67 @@ module.exports = {
         _default.description = sails.__('Add Fee Invoices');
         _default.actions = [];
         _default.filters = [];
+        break;
+      //---------------------FRONTEND LOGIN ---------------------
+      case 'frontend/user/view-login':
+        _default.headline = sails.__('Đăng nhập');
+        _default.description = sails.__('Đăng nhập');
+        break;
+      //---------------------FRONTEND PROFILE ---------------------
+      case 'frontend/user/profile':
+        _default.headline = sails.__('Thông tin cá nhân');
+        _default.description = sails.__('Thông tin cá nhân');
+        break;
+      //---------------------FRONTEND TEACHER ---------------------
+      case 'frontend/teacher/index':
+        _default.headline = sails.__('Teachers');
+        _default.description = sails.__('Teachers');
+        break;
+      
+      //---------------------FRONTEND NEWS---------------------
+      case 'frontend/news/index':
+        _default.headline = sails.__('Món ăn');
+        _default.description = sails.__('Món ăn');
+        break;
+      
+      //---------------------FRONTEND NEWS DETAIL---------------------
+      case 'frontend/news/detail':
+        _default.headline = sails.__('Chi tiết món ăn');
+        _default.description = sails.__('Chi tiết món ăn');
+      break;
+      
+      //---------------------FRONTEND GALLERY---------------------
+      case 'frontend/gallery/index':
+        _default.headline = sails.__('Gallery');
+        _default.description = sails.__('Gallery');
+        break;
+      
+      //---------------------FRONTEND GALLERY DETAIL---------------------
+      case 'frontend/gallery/detail':
+        _default.headline = sails.__('Gallery');
+        _default.description = sails.__('Gallery');
+        break;
+      
+      //---------------------FRONTEND ABOUT US---------------------
+      case 'frontend/aboutus/index':
+        _default.headline = sails.__('About Us');
+        _default.description = sails.__('About Us');
+        break;
+      
+      //---------------------FRONTEND CONTACT---------------------
+      case 'frontend/contact/index':
+        _default.headline = sails.__('Contact');
+        _default.description = sails.__('Contact');
+        break;
+      //---------------------FRONTEND NEWS ---------------------
+      case 'frontend/news/index':
+        _default.headline = sails.__('News');
+        _default.description = sails.__('News');
+      break;
+      //---------------------FRONTEND SUBJECT ---------------------
+      case 'frontend/subject/index':
+        _default.headline = sails.__('Schedule');
+        _default.description = sails.__('Schedule');
       break;
   }
     return exits.success(_default);

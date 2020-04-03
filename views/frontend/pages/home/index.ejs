@@ -1,108 +1,104 @@
 <% let BACKEND = sails.config.custom.BACKEND %>
-<!-- main content -->
-<main class="main-content">
-    <!-- banner -->
-    <section class="banner">
-      <div class="banner-item" style="background: url(images/cook-background.jpg)">
-        <div class="container">
-          <div class="banner-content">
-            <h2 class="caption">Master Cook</h2>
-          </div>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/owl-carousel/owl.theme.css">') %>
+
+
+
+
+<!-- START TEACHER SECTION -->
+<section class="section-side-image sec-padding-3 clearfix">
+  <div class="container">
+    <div class="row slide-controls-4">
+      <div class="col-sm-12">
+        <div class="sec-title-container text-center">
+          <h5 class="font-weight-4 less-mar-1 line-height-4 ce-title-top-text">title</h5>
+          <h2 class="font-weight-6 less-mar-1 line-height-5">title</h2>
+          <div class="ce-title-line"></div>
         </div>
       </div>
-    </section>
-    <!-- e: banner -->
+      <div class="clearfix"></div>
+      <!--end title-->
 
-    <!-- section-about -->
-    <section class="section-about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-xl-5">
-            <div class="about-us">
-              <div class="heading">
-                <p class="sub-title">Thông tin chung</p>
-                <h2 class="title">CookCook chuyên gia nấu ăn.</h2>
-              </div>
-              <div class="content-text">
-                Các món ăn đặc biệt từ mọi vùng miền sẽ được chúng tôi tổng hợp và đem đến cho các bạn !
-              </div>
-              <a href="#" class="btn btn-primary"><i class="long-arrow-right"></i> Read more</a>
+      <div id="owl-demo5" class="owl-carousel owl-theme">
+      
+        <div class="item">
+          <div class="ce-feature-box-69">
+            <div class="scicon-box">
+              <!-- <br/>
+              <ul class="sc-icons">
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li> 
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul> -->
             </div>
-          </div>
-          <div class="col-md-5 col-xl-7">
-            <figure class="about-us-figure">
-              <img src="/images/soup.png" alt="Image">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- e: section-about -->
-
-    <!-- section-food -->
-    <section class="section-teacher">
-      <div class="container">
-        <div class="heading">
-          <p class="sub-title text-center">Món</p>
-          <h2 class="title text-center">Bài viết về món ăn</h2>
-        </div>
-        <div class="teachers">
-          <div class="teacher-single">
-            <div class="card-info">
-              <div class="card-info-img">
-                <a href="#"><img src="/images/uploads/2019/phochua.jpg" alt=""></a>
-              </div>
-              <div class="card-info-body">
-                <h3 class="card-info-title">
-                  <a href="#">Phở chua xứ Lạng</a>
-                </h3>
-                <span class="position">Teacher</span>
-                <div class="card-info-text">
-                    Lê Văn Lương quận 7 Hồ chí minh
-                </div>
-              </div>
+            <div class="img-box">
+              <img src="http://placehold.it/740x555" alt="" class="img-responsive"/>
+            </div>
+            <!-- <div class="shape-1"><img src="images/136.png" alt="" class="img-responsive"/></div>
+            <div class="shape-2"><img src="images/137.png" alt="" class="img-responsive"/></div>
+            <div class="shape-4"><img src="images/139.png" alt="" class="img-responsive"/></div> -->
+            <div class="text-box">
+            <h5 class="nopadding title">Name</h5>
+                <p class="subtext">title</p>
             </div>
           </div>
         </div>
-        <div class="text-center"><a href="#" class="btn btn-primary"><i class="long-arrow-right"></i> Read more</a></div>
-      </div>
-    </section>
-    <!-- e: section-food -->
+        <!--end carousel item-->
+     
 
-    <!-- section-contact -->
-    <section class="section-contact">
-      <div class="container">
-        <div class="contact-info">
-          <h3 class="contact-info-title">Contact us</h3>
-          <div class="contact-content">
-            <strong>Corporate headquarters:</strong><br>
-            Lầu 11 Toà nhà Tin Học<br>
-            <strong>Phone:</strong>0832479782<br>
-            <strong>Email:</strong> <a href="mailto: ricarnguyen1507@gmail.com">ricarnguyen1507@gmail.com</a>
-          </div>
-          <div class="contact-form">
-            <h3>Get in Touch</h3>
-            Please fill out the form
-            <form class="forms" action="">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="* Your email address">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" placeholder="Message"></textarea>
-              </div>
-              <button class="btn btn-primary btn-submit">Submit</button>
-            </form>
-          </div>
+      </div>
+      <!--end carousel main-->
+    </div>
+
+  </div>
+</section>
+<div class=" clearfix"></div>
+  <!--end section-->
+<!-- END TEACHER SECTION -->
+
+<!-- END NEWS SECTION -->
+<section class="section-side-image section-light sec-bpadding-2 clearfix">
+  <!-- <div class="img-holder col-md-12 col-sm-12 pull-left">
+    <div class="background-imgholder" style="background:url(http://via.placeholder.com/2000x1500);"><img
+        class="nodisplay-image" src="http://via.placeholder.com/2000x1500" alt="" /> </div>
+  </div> -->
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="sec-title-container text-center">
+          <h5 class="font-weight-4 less-mar-1 line-height-4 ce-title-top-text">header</h5>
+          <h2 class="font-weight-6 less-mar-1 line-height-5">title</h2>
+          <div class="ce-title-line"></div>
         </div>
       </div>
-      <div class="map">
-        <img src="frontend/images/upload/map.png" alt="">
+      <div class="clearfix"></div>
+      <!--end title-->
+
+  
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="ce-feature-box-5 margin-bottom">
+          <div class="img-box"> <img src="http://via.placeholder.com/1000x800" alt="" class="img-responsive" /></div>
+          <div class="clearfix"></div>
+          <br />
+          <p>12/12/2020</p>
+          <h5 class="font-weight-5 title"><a href="#">title</a></h5>
+          <p class="content">Mon an</p>
+          <br />
+          <div class="divider-line solid light"></div>
+          <br />
+          <div class="imgbox-xtiny left overflow-hidden"><img src="/images/avatar2.png" alt=""
+              class="img-responsive" /></div>
+          <div class="text-box-right less-padding text-dark">Admin</div>
+        </div>
       </div>
-    </section>
-    <!-- e: section-contact -->
-  </main>
-  <!-- e: main content -->
-<% block('localScripts', '<script src="/js/frontend/dashboard/index.js"></script>') %>
+      <!--end item-->
+    </div>
+
+  </div>
+</section>
+<div class=" clearfix"></div>
+<!-- END NEWS SECTION -->
+
+<% block('localScripts', '<script src="/vendors/owl-carousel/custom.js"></script>') %>
+<% block('localScripts', '<script src="/js/frontend/home/index.js"></script>') %>

@@ -1,0 +1,152 @@
+<!-- START REVOLUTION SLIDER 5.0 -->
+<div class="slide-tmargin">
+  <div class="slidermaxwidth">
+    <div class="rev_slider_wrapper">
+      <!-- START REVOLUTION SLIDER 5.0 auto mode -->
+      <div id="rev_slider" class="rev_slider" data-version="5.0">
+        <ul>
+          <%if(webSettings && webSettings.value && webSettings.value.homeSettings && webSettings.value.homeSettings.sliders && webSettings.value.homeSettings.sliders.length) {%>
+            <%for(let i = 0; i < webSettings.value.homeSettings.sliders.length; i++){%>
+              <!-- SLIDE  -->
+              <li data-index="rs-<%=i+1%>" data-transition="fade" data-slotamount="7" data-hideafterloop="0"
+                data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
+                data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Love it?" data-param1=""
+                data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
+                data-param9="" data-param10="" data-description="">
+    
+                <!-- MAIN IMAGE -->
+                <img src="<%=webSettings.value.homeSettings.sliders[i].background ? webSettings.value.homeSettings.sliders[i].background : '/frontend/images/banner-home.png' %>" alt="" data-bgposition="center center" data-kenburns="on"
+                  data-duration="20000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
+                  data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10"
+                  class="rev-slidebg" data-no-retina width="2000" height="1300">
+    
+    
+                <!-- LAYER NR. 13 -->
+                <!-- <div class="tp-caption tp-shape bg-prim tp-shapewrapper  tp-resizeme" data-x="['left','left','left','left']"
+                  data-hoffset="['45','45','20','0']" data-y="['top','top','top','top']"
+                  data-voffset="['360','220','130','120']" data-width="575" data-height="310" data-whitespace="nowrap"
+                  data-type="shape" data-start="1000" data-responsive_offset="on"
+                  data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":3000,"to":"opacity:0;","ease":"Power4.easeIn"}]'
+                  data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                  data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6;"> </div> -->
+    
+    
+                <!-- LAYER NR. 1 -->
+                <div class="tp-caption raleway text-white tp-resizeme" data-x="['left','left','left','left']"
+                  data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']"
+                  data-voffset="['390','250','150','150']" data-fontsize="['16','16','14','14']"
+                  data-lineheight="['70','70','70','50']" data-width="none" data-height="none" data-whitespace="nowrap"
+                  data-transform_idle="o:1;"
+                  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                  data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                  data-start="1500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                  style="z-index: 7; white-space: nowrap;"><%-webSettings.value.homeSettings.sliders[i].headline ? webSettings.value.homeSettings.sliders[i].headline : 'Kindie' %></div>
+    
+    
+                <!-- LAYER NR. 2 -->
+                <div class="tp-caption montserrat fweight-6 text-white tp-resizeme" data-x="['left','left','left','left']"
+                  data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']"
+                  data-voffset="['420','280','180','190']" data-fontsize="['40','40','30','30']"
+                  data-lineheight="['100','100','100','50']" data-width="none" data-height="none" data-whitespace="nowrap"
+                  data-transform_idle="o:1;"
+                  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                  data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                  data-start="2000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                  style="z-index: 7; white-space: nowrap;"><%-webSettings.value.homeSettings.sliders[i].title ? webSettings.value.homeSettings.sliders[i].title : 'Kindie' %></div>
+    
+                <!-- LAYER NR. 2 -->
+                <!-- <div class="tp-caption montserrat fweight-6 text-white tp-resizeme" data-x="['left','left','left','left']"
+                  data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']"
+                  data-voffset="['460','320','220','230']" data-fontsize="['40','40','30','30']"
+                  data-lineheight="['100','100','100','50']" data-width="none" data-height="none" data-whitespace="nowrap"
+                  data-transform_idle="o:1;"
+                  data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                  data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                  data-start="2500" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+                  style="z-index: 7; white-space: nowrap;">Business Solution </div> -->
+    
+                <!-- LAYER NR. 2 -->
+                <%if(webSettings.value.homeSettings.sliders[i].link){%>
+                <div class="tp-caption sbut4" data-x="['left','left','left','left']" data-hoffset="['85','85','60','60']"
+                  data-y="['top','top','top','top']" data-voffset="['580','435','335','300']" data-whitespace="nowrap"
+                  data-type="text" data-responsive_offset="on"
+                  data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];","speed":2000,"to":"o:1;","delay":3000,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
+                  data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+                  data-paddingright="[20,20,20,20]" data-paddingbottom="[10,10,10,10]" data-paddingleft="[20,20,20,20]"
+                  style="z-index: 7;"><a href="<%=webSettings.value.homeSettings.sliders[i].link%>"><%= __('Get Started!')%></a> </div>
+              </li>
+              <%}%>
+            <%}%>
+          <%}else{%>
+            <li data-index="rs-1" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"
+              data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000" data-rotate="0"
+              data-saveperformance="off" data-title="Love it?" data-param1="" data-param2="" data-param3="" data-param4=""
+              data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+            
+              <!-- MAIN IMAGE -->
+              <img src="http://via.placeholder.com/2000x1300" alt="" data-bgposition="center center" data-kenburns="on"
+                data-duration="20000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0"
+                data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg"
+                data-no-retina>
+            
+            
+              <!-- LAYER NR. 13 -->
+              <div class="tp-caption tp-shape bg-prim tp-shapewrapper  tp-resizeme" data-x="['left','left','left','left']"
+                data-hoffset="['45','45','20','0']" data-y="['top','top','top','top']" data-voffset="['360','220','130','120']"
+                data-width="575" data-height="310" data-whitespace="nowrap" data-type="shape" data-start="1000"
+                data-responsive_offset="on"
+                data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":3000,"to":"opacity:0;","ease":"Power4.easeIn"}]'
+                data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6;"> </div>
+            
+            
+              <!-- LAYER NR. 1 -->
+              <div class="tp-caption raleway text-white tp-resizeme" data-x="['left','left','left','left']"
+                data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']" data-voffset="['390','250','150','150']"
+                data-fontsize="['16','16','14','14']" data-lineheight="['70','70','70','50']" data-width="none" data-height="none"
+                data-whitespace="nowrap" data-transform_idle="o:1;"
+                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="1500"
+                data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;">
+                Creative Pixel Perfect Design </div>
+            
+            
+              <!-- LAYER NR. 2 -->
+              <div class="tp-caption montserrat fweight-6 text-white tp-resizeme" data-x="['left','left','left','left']"
+                data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']" data-voffset="['420','280','180','190']"
+                data-fontsize="['40','40','30','30']" data-lineheight="['100','100','100','50']" data-width="none"
+                data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="2000"
+                data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;">We
+                Offer Perfect</div>
+            
+              <!-- LAYER NR. 2 -->
+              <div class="tp-caption montserrat fweight-6 text-white tp-resizeme" data-x="['left','left','left','left']"
+                data-hoffset="['105','105','80','80']" data-y="['top','top','top','top']" data-voffset="['460','320','220','230']"
+                data-fontsize="['40','40','30','30']" data-lineheight="['100','100','100','50']" data-width="none"
+                data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;"
+                data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                data-transform_out="opacity:0;s:1000;s:1000;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="2500"
+                data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap;">
+                Business Solution </div>
+            
+              <!-- LAYER NR. 2 -->
+              <div class="tp-caption sbut4" data-x="['left','left','left','left']" data-hoffset="['85','85','60','60']"
+                data-y="['top','top','top','top']" data-voffset="['580','435','335','300']" data-whitespace="nowrap"
+                data-type="text" data-responsive_offset="on"
+                data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];","speed":2000,"to":"o:1;","delay":3000,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
+                data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]" data-paddingright="[20,20,20,20]"
+                data-paddingbottom="[10,10,10,10]" data-paddingleft="[20,20,20,20]" style="z-index: 7;"><a href="#">Get Started!</a>
+              </div>
+            </li>
+          <%}%>
+        </ul>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+  </div>
+  <!-- END REVOLUTION SLIDER WRAPPER -->
+</div>
+<div class="clearfix"></div>
+<!-- END OF SLIDER WRAPPER -->

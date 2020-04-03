@@ -4,6 +4,7 @@ module.exports.api = {
     'PUT   /api/v1/backend/account/logout': { action: 'backend/account/logout' },
     'PUT   /api/v1/backend/account/update-profile': { action: 'backend/account/update-profile' },
     'PUT   /api/v1/backend/entrance/login': { action: 'backend/entrance/login' },
+    'POST   /api/v1/frontend/user/login': { action: 'frontend/user/login' },
     'POST  /api/v1/backend/entrance/signup': { action: 'backend/entrance/signup' },
     'POST  /api/v1/backend/entrance/send-password-recovery-email': { action: 'backend/entrance/send-password-recovery-email' },
 

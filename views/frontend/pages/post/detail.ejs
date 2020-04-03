@@ -1,0 +1,77 @@
+<%if(postObj != null){%>
+<section>
+    <div class="pagenation-holder">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <ol class="breadcrumb">
+                  <li><a href="/"><%= __('Trang chủ')%></a></li>
+                  <li><a href="/news"><%= __('Món ăn')%></a></li>
+                  <li class="current"><a href="javascript:void(0)"><%= __('Chi tiết món ăn')%></a></li>
+              </ol>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<section class="sec-padding-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="ce-feature-box-52 margin-bottom">
+          <div class="ce-post-img">
+            <img src="<%= postObj && postObj.media ? postObj.media.thumbnail.sizes.medium_large.path : ''%>" alt="" class="img-responsive"/> </div>
+            <div class="clearfix"></div>
+            <br/>
+            <div class="postinfo-box">
+              <h4 class="less-mar-1 title"><%= postObj.title %></h4>
+                <p class="motto"><%= postObj.motto %></p>
+                <%- postObj.description %>
+            </div>
+        </div>
+      </div>
+      <!--end item-->
+      </div>
+      <!--end left col main-->
+      
+      <div class="col-md-4 col-sm-12 col-xs-12 section-white">
+          <div class="pages-sidebar-item">
+            <h5 class="uppercase pages-sidebar-item-title"><%= __('Categories') %></h5>
+            <%if(listTaxonomies.length){%>
+            <ul class="pages-sidebar-links">
+              <%for(let tax of listTaxonomies){%>
+                <li class="taxonomy"><a class="<%= taxActive && taxActive.category == tax.id ? 'active' : ''%> " href="/news?category=<%= tax.id%>"><%= tax.title%></a></li>
+              <%}%>   
+            </ul>
+            <%}else{%>
+            <p><%= __('No Category')%></p>
+            <%}%>
+          </div>
+          <!--end item holder-->
+          
+          <div class="pages-sidebar-item">
+            <h5 class="uppercase pages-sidebar-item-title"><%= __('Related Posts') %></h5>
+            <%if(listLastestPost.length > 0){%>
+              <%for(let item of listLastestPost){%>
+                <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
+                  <div class="imgbox-small left"> <img src="<%= item && item.media ? item.media.thumbnail.sizes.thumbnail.path : '/images/no-thumb.png'%>" alt="" class="img-responsive"/></div>
+                  <div class="text-box-right">
+                    <h6 class="nopadding"><a href="/news/<%= item.alias%>/<%= item.id%>" class="text-hover-gyellow"><%= item ? item.title : ''%></a></h6>
+                    <div class="blog-post-info"> <span> By <%= item && item.author ? item.author.firstName : '' %> <%= item && item.author ? item.author.lastName : '' %> </span> <span><%= item ? moment(item.createdAt).format('MM/DD/YYYY') : '' %> </span></div>
+                  </div>
+                </div>
+              <%}%>
+            <%}%>
+            <!--end post-->
+          </div>
+          <!--end item holder-->
+      </div>
+      <!--end right col--> 
+      
+    </div>
+  </div>
+</section>
+<%}%>
+<% block('localScripts', '<script src="/js/frontend/news/index.js"></script>') %>

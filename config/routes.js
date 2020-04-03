@@ -9,9 +9,10 @@
  */
 
 var routes_api = require('./routes/api');
+var routes_frontend = require('./routes/frontend');
 var routes_socket_mobile = require('./routes/socket');
 
-module.exports.routes = Object.assign(routes_api.api, routes_socket_mobile.socket, {
+module.exports.routes = Object.assign(routes_frontend.frontend,routes_api.api, routes_socket_mobile.socket, {
 
 
   //  ╦ ╦╔═╗╔╗ ╔═╗╔═╗╔═╗╔═╗╔═╗
@@ -31,7 +32,6 @@ module.exports.routes = Object.assign(routes_api.api, routes_socket_mobile.socke
   // ADMIN VIEW ZONE
   //==================================
 
-  'GET /home': { action: 'frontend/home/index' , locals: { layout: 'frontend/layouts/layout' }},
   'GET /backend': { action: 'backend/dashboard/index' },
 
   'GET /installation/account': { action: 'installation/account', locals: { layout: 'backend/layouts/layout-installation' } },

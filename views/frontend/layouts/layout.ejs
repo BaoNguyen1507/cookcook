@@ -6,62 +6,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description" content="<%=webSettings.value.description%>">
-    <meta name="author" content="Group6">
+    <meta name="author" content="Group 6">
     <% /* Viewport tag for sensible mobile support */ %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="icon" href="/images/logo-light.png">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/frontend/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/frontend/stylesheets/font-awesome.css">
-    <link rel="stylesheet" href="/frontend/stylesheets/slick.css">
+    <link rel="icon" href="/images/cookcook.png">
+    <!-- build:css -->
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/vendors/megamenu/stylesheets/screen.css">
+    <link rel="stylesheet" href="/vendors/loaders/stylesheets/screen.css">
+    <link rel="stylesheet" href="/vendors/cubeportfolio/cubeportfolio.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/navigation.css">
+    <link rel="stylesheet" href="/vendors/tabs/css/responsive-tabs.css">
+    <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/frontend/css/corporate.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/theme-default.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/simple-line-icons.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/et-line-font.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/shortcodes.css" type="text/css">
+    <link rel="stylesheet" href="/frontend/css/custom.css" type="text/css">
+    <!-- endbuild -->
     <%- blocks.localCss %>
-    <link rel="stylesheet" href="/frontend/stylesheets/style.css">
   </head>
-  <body class="wp-menu fixed-layout skin-blue-dark">
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">CookCook</p>
+
+  <body>
+  <div class="over-loader loader-live">
+    <div class="loader">
+        <div class="loader-item style5">
+          <div class="bounce1"></div>
+          <div class="bounce2"></div>
+          <div class="bounce3"></div>
         </div>
-    </div>
-    <div class="main-wrapper">
-        <%- partial('../partials/header.ejs') %>
-        <div class="page-wrapper">
-          <div class="container-fluid">
-            <%- body %>
-          </div>
-        </div> 
+        
+      </div>
+  </div>
+  <!--end loading-->
+
+
+    <!--wrapper boxed-->
+    <div class="wrapper-boxed">
+      <!--site wrapper--> 
+      <div class="site-wrapper">
+        <%if(moduleActive.action == 'frontend/home/index'){%>
+          <%- partial('../partials/header.ejs') %>
+          <%- partial('../partials/banner.ejs') %>
+        <%}else{%>
+          <%- partial('../partials/header-sub-page.ejs') %>
+          <%- partial('../partials/banner-sub-page.ejs') %>
+        <%}%>
+        <%- body %>
         <%- partial('../partials/footer.ejs') %>
-      <script>delete window.self;</script>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="/dependencies/sails.io.js"></script>
-      <script src="/vendors/moment/moment.min.js"></script>
-      <script src="/dependencies/lodash.js"></script>
-      <script src="/frontend/javascripts/bootstrap.min.js"></script>
-      <script src="/frontend/javascripts/popper.min.js"></script>
-      <script src="/frontend/javascripts/slick.js"></script>
-      <script src="/js/perfect-scrollbar.jquery.min.js"></script>
-      <!--Custom JavaScript -->
-      <script src="/dependencies/cloud.js"></script>
-      <script src="/js/frontend/cloud.setup.js"></script>
-      <script src="/js/frontend/base.js"></script>
-      <%- blocks.localScripts %>
-      <script src="/frontend/javascripts/customs.js"></script>
-      <script src="/js/i18n.js"></script>
-      <script src="/js/frontend/main.js"></script>
-
-      <script>
-        var EKPAction = '<%=moduleActive.action%>';
-        var layout = 'layout';
-        var UPLOAD = {
-          EXTENSION: ['.png', '.jpg', '.jpeg', '.gif', '.heic']
-        };
-      </script>
+      </div>
+      <!--end site wrapper--> 
     </div>
+    <!--end wrapper boxed-->
+    <script>delete window.self;</script>
+    <!-- build:js -->
+    <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/vendors/moment/moment.min.js"></script>
+    <script src="/vendors/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+    <script src="/vendors/less/less.min.js"></script>
+    <script src="/vendors/functions/functions.js"></script>
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendors/tabs/js/responsive-tabs.min.js"></script>
+    <script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/vendors/sticky/js/jquery.sticky.js"></script>
+    <script src="/dependencies/lodash.js"></script>
+    <script src="/dependencies/cloud.js"></script>
+    <script src="/js/frontend/cloud.setup.js"></script>
+    <script src="/js/frontend/base.js"></script>
+    <script src="/js/i18n.js"></script>
+    <!-- <script src="/frontend/vendor/js/jquery.magnific-popup.min.js"></script> -->
+    <script src="/vendors/megamenu/js/main.js"></script> 
+    <script type="text/javascript" src="/vendors/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/vendors/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/frontend/js/custom.js"></script>
+    <!-- endbuild -->  
+    <!--Custom JavaScript -->
+    <%- blocks.localScripts %>
+    
+    <script src="/js/frontend/main.js"></script>
+    <script>
+      var EKPAction = '<%=moduleActive.action%>';
+      var layout = 'layout';
+      var UPLOAD = {
+        EXTENSION: ['.png', '.jpg', '.jpeg', '.gif', '.heic']
+      };
+    </script>
   </body>
 </html>

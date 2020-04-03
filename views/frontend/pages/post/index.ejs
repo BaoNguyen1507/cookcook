@@ -1,20 +1,80 @@
-<!-- Page -->
-<% let BACKEND = sails.config.custom.BACKEND %>
-    <!-- Page Content -->
-<% block('localCss', '<link rel="stylesheet" href="/vendors/dropify/dropify.min.css">') %>
-<div class="row">
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body"> 
-                <%- partial('../../partials/filter.ejs') %>
-                <div class="table-responsive">
-                    <%- partial('./_list.ejs') %>
+<section>
+    <div class="pagenation-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="/"><%= __('Trang chủ')%></a></li>
+                        <li class="current"><a href="/news"><%= __('Món ăn')%></a></li>
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<% block('localScripts', '<script src="/vendors/dropify/dropify.min.js"></script>') %>
-<% block('localScripts', '<script src="/js/backend/post/list.js"></script>') %>
-<% block('localScripts', '<script src="/vendors/sweetalert/sweetalert.min.js"></script>') %>
+</section>
+<div class="clearfix"></div>
+<section class="sec-padding-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <% if(listNews.length > 0){ %>
+                    <%for(let postObj of listNews){%>
+                        <div class="col-md-6 col-sm-12 col-xs-12 margin-bottom">
+                            <div class="ce-feature-box-52">
+                                <div class="ce-post-img"> 
+                                    <a href="/user/news/<%= postObj.postsOfCat.alias%>/<%=postObj && postObj.postsOfCat ? postObj.postsOfCat.id : ''%>">
+                                    <div class="overlay"><i class="fa fa-plus" aria-hidden="true"></i> </div>
+                                    </a> 
+                                    <img src="<%= postObj.postsOfCat.media && postObj.postsOfCat.media.thumbnail ? postObj.postsOfCat.media.thumbnail.sizes.medium_large.path : ''%>" alt="" class="img-responsive"/> 
+                                </div>
+                                <div class="text-box padd-1 shadow">
+                                    <h5 class="less-mar-1 title cropText">
+                                        <a href="/user/news/<%= postObj.postsOfCat.alias%>/<%=postObj && postObj.postsOfCat ? postObj.postsOfCat.id : ''%> ">
+                                            <%= postObj && postObj.postsOfCat ? postObj.postsOfCat.title : '' %>
+                                        </a>
+                                    </h5>
+                                    <p class="motto-length"><%= postObj && postObj.postsOfCat ? postObj.postsOfCat.motto: ''%></p>
+                                    <div class="date-info-box">
+                                        <div class="box-left">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;
+                                            <%= postObj && postObj.postsOfCat ? moment(postObj.postsOfCat.createdAt).format('MM/DD/YYYY') : '' %>
+                                        </div>
+                                        <div class="box-right">
+                                            By </br><%= postObj && postObj.postsOfCat.author ? postObj.postsOfCat.author.lastName : '' %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                    <%- partial ('../../partials/paging.ejs') %>
+                <%}else{%>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div class="ce-feature-box-52 margin-bottom">
+                                <%= __('Data empty') %>
+                        </div>
+                    </div>
+                <%}%>
+                <!--end comment box-->
+                
+            </div>
+            <!--end left col main--> 
+            <div class="col-md-4 col-sm-12 col-xs-12 section-white">
+                <div class="pages-sidebar-item">
+                <h5 class="uppercase pages-sidebar-item-title"><%= __('Categories') %></h5>
+                <%if(listTaxonomies.length){%>
+                    <ul class="pages-sidebar-links">
+                        <%for(let tax of listTaxonomies){%>
+                            <li class="taxonomy"><a class="<%= categoryActive && categoryActive == tax.id ? 'active' : ''%> " href="?category=<%= tax.id%>"><%= tax.title%></a></li>
+                        <%}%>    
+                    </ul>
+                <%}else{%>
+                    <p><%= __('No Category')%></p>
+                <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<% block('localScripts', '<script src="/js/frontend/news/index.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/cubeportfolio/cols-2.js"></script>') %>

@@ -84,34 +84,22 @@
           <div class="dropdown-menu mailbox dropdown-menu-right animated" aria-labelledby="2">
             <ul>
               <li>
-                  <a class="dropdown-item" href="/backend/post">
-                    <i class="ti-arrow-circle-right"></i>
-                    <%= __('Posts') %>
-                  </a>
-              </li>
-              <li>
                 <a class="dropdown-item" href="/backend/brand">
                   <i class="ti-arrow-circle-right"></i>
-                  <%= __('Brands') %>
+                  <%= __('Nhà hàng') %>
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" href="/backend/staff">
                   <i class="ti-arrow-circle-right"></i>
-                  <%= __('Staff') %>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/backend/food">
-                  <i class="ti-arrow-circle-right"></i>
-                  <%= __('Foods') %>
+                  <%= __('Quản lý tài khoản') %>
                 </a>
               </li>
               <% if (userActive.isSuperAdmin) { %>
               <li>
                 <a class="dropdown-item" href="/backend/setting">
                   <i class="ti-arrow-circle-right"></i>
-                  <%= __('Settings') %>
+                  <%= __('Cài đặt') %>
                 </a>
               </li>
               <% } %>

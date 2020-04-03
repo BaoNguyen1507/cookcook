@@ -174,9 +174,11 @@ will be disabled and/or hidden in the UI.
             // If the logged-in user has gone missing, log a warning,
             // wipe the user id from the requesting user agent's session,
             // and then send the "unauthorized" response.
-            if (!loggedInUser) {
+            if (!loggedInUser && req.path.indexOf('/backend') != -1) {
               sails.log.warn('Somehow, the user record for the logged-in user (`'+req.session.userId+'`) has gone missing....');
               delete req.session.userId;
+              return res.foUnauthorized();
+            } else if(!loggedInUser) {
               return res.unauthorized();
             }
 

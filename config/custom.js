@@ -312,7 +312,9 @@ module.exports.custom = {
     USER_STAFF: 'user.staff',
     USER_MEMBER: 'user.member',
   },
-
+  PAGING: {
+    LIMIT: 12
+  },
   PAID: {
     UNPAID: 0,
     PAIDED: 1

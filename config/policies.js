@@ -95,8 +95,10 @@ module.exports.policies = {
     '*': 'is-mobile-authenticated'
   },
 
+  'frontend/news/*': ['is-fo-logged-in','init-before-action'],
+  'frontend/subject/*': ['is-fo-logged-in', 'init-before-action'],
+  'frontend/user/profile': ['is-fo-logged-in','init-before-action'],
   '*': ['init-before-action'],
-
   // Bypass the `is-logged-in` policy for:
   'backend/account/logout': true,
   'backend/entrance/*': true,

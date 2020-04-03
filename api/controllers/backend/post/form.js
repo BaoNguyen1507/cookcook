@@ -27,11 +27,16 @@ module.exports = {
     let posts = {};
     let _default = await sails.helpers.getDefaultData(this.req);
     let params = this.req.allParams();
-    let postActive = await PostService.get({ id: params.postId });
+    if (params.postId != undefined) {
+      let postActive = await PostService.get({ id: params.postId });
     if (!postActive) return ('Bab Request');
     let medias = await MediaService.find({ post: postActive.id });
     postActive.media = medias;
     _default.postsData = postActive;
+    } else {
+      _default.postsData = {};
+    }
+    
     return exits.success(_default);
   }
 };

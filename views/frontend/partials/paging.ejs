@@ -1,0 +1,22 @@
+<%if(numberOfPages >1){%>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="pagination style-3 hover-blue">
+                    <li><a href="<%= (pageActive > 1 ) ? '?page='+(pageActive - 1) : 'javascript:void(0)' %>"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
+                    <% if(categoryActive == null){%>
+                        <%for(let i = 1; i <= numberOfPages; i++ ){%>
+                            <li class="page-item <%= (pageActive == i ) ? 'active': ''%> "><a class="page-link" href="?page=<%= i%>"><%= i%></a></li>
+                        <%}%>
+                    <%}else{%>
+                        <%for(let i = 1; i <= numberOfPages; i++ ){%>
+                        <li><a class="<%= (pageActive == i ) ? 'active': ''%>" href="?category=<%=categoryActive%>&page=<%= i%>"><%= i%></a></li>
+                        <%}%>
+                    <%}%>
+                    <li><a href="<%= (pageActive < numberOfPages ) ? '?page='+(pageActive + 1) : 'javascript:void(0)' %>"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <%}%>
+    

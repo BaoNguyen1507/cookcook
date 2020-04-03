@@ -1,28 +1,31 @@
-<!-- header -->
-<header class="header-site" id="header">
-    <nav class="navbar navbar-expand-lg navbar-kindie" id="nav-kindie">
+<div class="col-md-12 nopadding">
+    <div class="header-section style1 noborder pin-style">
       <div class="container">
-        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span></span>
-        </button>
-        <div class="navbar-logo order-2 order-lg-1">
-          <a href="#"><img src="/images/cookcook.png" alt="CookCook"></a>
-        </div>
-        <div class="navbar-right order-3">
-          <a href="#" class="btn btn-outline-light active">Login</a>
-        </div>
-        <div class="collapse navbar-collapse order-4 order-lg-2" id="navbarSupportedContent">
-          <ul class="nav navbar-nav menu">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Thông báo</a></li>
-            <li><a href="#">Nhà hàng</a></li>
-            <li><a href="#">Thương hiệu</a></li>
-            <li><a href="#">Món ăn</a></li>
-            <li><a href="#">Thông tin chung</a></li>
-            <li><a href="#">Liên hệ</a></li>
-          </ul>
+        <div class="mod-menu">
+          <div class="row">
+            <div class="col-sm-2"> <a href="/" title="" class="logo style-2 mar-4"> <img src="/images/cookcook.png" alt=""> </a> </div>
+            <div class="col-sm-10">
+              <div class="main-nav">
+                <div id="menu" class="collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="<%= (moduleActive.action == 'frontend/home/index') ? 'active' : '' %>"> <a href="/">Trang chủ</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/notice/index') ? 'active' : '' %>"><a href="/notice">Thông báo</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/teacher/index') ? 'active' : '' %>"> <a href="/teacher">Nhà hàng</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/subject/index') ? 'active' : '' %>"> <a href="/subject">Thương hiệu</a><span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/news/index' || moduleActive.action == 'frontend/news/detail') ? 'active' : '' %>"> <a href="/user/news">Món ăn</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/gallery/index' || moduleActive.action == 'frontend/gallery/detail') ? 'active' : '' %>"> <a href="/gallery">Gallery</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/aboutus/index') ? 'active' : '' %>"> <a href="/about-us">Thông tin chung</a> <span class="arrow"></span></li>
+                    <li class="<%= (moduleActive.action == 'frontend/contact/index') ? 'active' : '' %>"> <a href="/contact">Liên hệ</a> <span class="arrow"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-  </header>
-  <!-- e: header -->
+    </div>
+    <!--end menu-->
+</div>
+  <!--end menu-->
+<div class="clearfix"></div>
+  

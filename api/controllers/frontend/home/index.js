@@ -20,13 +20,12 @@ module.exports = {
    
     // webSettings
     let webSettings = this.res.locals.webSettings;
-    
-    // let teachers = await UserService.find({ status: sails.config.custom.STATUS.ACTIVE, userType: { in: [sails.config.custom.TYPE.TEACHER ] }});
-    let news = await PostService.find({ status: sails.config.custom.STATUS.ACTIVE });
-
+    let sizeThumb = _default.UPLOAD.SIZES[1].name;
+    let sizeMediumLarge = _default.UPLOAD.SIZES[3].name;
+   
+    let news = await PostService.find({ status: sails.config.custom.STATUS.ACTIVE },3,0,'createAt DESC');
 
     _default.webSettings = webSettings;
-    // _default.teachers = teachers;
     _default.news = news;
     _default.moment = moment;
 

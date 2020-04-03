@@ -1,49 +1,47 @@
 
-<div class="login-register" style="background-image:url(/images/cook-background.jpg);">
-  <div class="login-box card">
-      <div class="card-body">
-          <form class="form-horizontal" id="frmLogin" data-toggle="validator" role="form">
-              <h3 class="text-center m-b-20"><%= __('Sign In') %></h3>
-              <div class="form-group ">
-                  <div class="col-xs-12">
-                      <input class="form-control" id="txtEmail" name="emailAddress" type="email" placeholder="E-mail"
-                  data-email-error="<%= __('Email is not invalid.') %>"
-                  data-required-error="<%= __('Required field') %>" required>
-                </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-xs-12">
-                    <input class="form-control " id="txtPassword" name="password" type="password" placeholder="<%= __('Password') %>"
-                    data-required-error="<%= __('Required field') %>" required>    
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <div class="col-md-12">
-                      <div class="d-flex no-block align-items-center">
-                          <div class="ml-auto">
-                              <a href="/backend/password/forgot" id="to-recover" class="text-muted"><i class="fas fa-lock m-r-5"></i> <%= __('Forgot password?') %></a> 
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div id="loginFail" class="alert d-none" role="alert">
-                  <i class="mdi mdi-alert-circle"></i>
-                  <%= __('Login fail! Please check your email and password!')%>
-              </div>
-              <div id="requiredFeild" class="alert d-none" role="alert">
-                  <i class="mdi mdi-alert-circle"></i>
-                    <%= __('Email and password are required!')%>
-                </div>
-                <div id="accountNotActive" class="alert d-none" role="alert">
-                    <i class="mdi mdi-alert-circle"></i>
-                    <%= __('You are not have permission or your account is not active!')%>
-                </div>
-              <div class="form-group text-center">
-                  <div class="col-xs-12 p-b-20">
-                      <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit"><%= __('Log In') %></button>
-                  </div>
-              </div> 
-          </form> 
+ <!-- main content -->
+ <main class="main-content">
+    <!-- sub-banner -->
+    <section class="sub-banner">
+      <div class="container">
+        <h1 class="title-page">Login</h1>
       </div>
-  </div>
-</div>
+    </section>
+    <!-- e: sub-banner -->
+
+    <div class="container">
+      <div class="sign-in">
+        <div class="sign-in-header">
+          <h2>Login your account</h2>
+        </div>
+        <form class="form-sign" id='frmLogin' data-toggle="validator" role="form">
+          <div class="form-group">
+            <label>E-mail</label>
+            <div class="input-group-icons">
+              <input type="text" class="form-control" placeholder="E-mail" id="txtEmail" name="emailAddress" type="email">
+              <span class="prepend-icon"><i class="envelope-o"></i></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <div class="input-group-icons input-group-pw">
+              <input type="text" class="form-control" placeholder="Password" id="txtPassword" name="password" type="password">
+              <span class="prepend-icon"><i class="key-o"></i></span>
+              <span class="prepend-icon-eye"><i class="eye-o"></i></span>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-styled active" type="button">Login</button>
+          <div class="text">
+            <div class="text-remember">
+              <input type="checkbox" id="txt-remember" name="">
+              <label for="txt-remeber">Remeber me</label>
+            </div>
+            <div class="text-forgot">
+              <a href="#">forgot password?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <!-- e: main content -->

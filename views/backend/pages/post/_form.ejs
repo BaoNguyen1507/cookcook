@@ -2,17 +2,19 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title"><%= postsData.title%></h4>
+        <h4 class="card-title"><%= postsData ? postsData.title : ''%></h4>
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6 js-height-scrollbar" style="height: 350px;">
-            <% for(let video of postsData.media) {%>
-              <%if(video.type == 1) {%>
-                <iframe id="player" type="text/html" width="500" height="300"
-                src="http://www.youtube.com/embed/<%= video.thumbnail.videoID %>?enablejsapi=1&origin=http://example.com"
-                frameborder="0"></iframe>
+            <%if(postsData.media){%>
+              <% for(let video of postsData.media) {%>
+                <%if(video.type == 1) {%>
+                  <iframe id="player" type="text/html" width="500" height="300"
+                  src="http://www.youtube.com/embed/<%= video.thumbnail.videoID %>?enablejsapi=1&origin=http://example.com"
+                  frameborder="0"></iframe>
+                <%}%>
               <%}%>
-            <%}%>
+            <%}%> 
           </div>
           <div class="col-md-3"></div>
         </div>
@@ -21,7 +23,7 @@
           <div class="col-sm-6 js-height-scrollbar">
             <div class="message-box">
               <div class="message-widget message-scroll">
-                <%= postsData.motto%>
+                <%= postsData ? postsData.motto : '' %>
               </div>
             </div> 
           </div>
@@ -30,7 +32,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6 js-height-scrollbar" style="height: 350px;">
-              <img src="<%= postsData.media[0].thumbnail.path %>" />
+              <img src="<%= postsData.media ? postsData.media[0].thumbnail.path : ''%>" />
             </div>
             <div class="col-md-3"></div>
         </div>

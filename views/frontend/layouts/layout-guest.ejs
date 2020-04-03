@@ -3,54 +3,70 @@
 
 <head>
   <title><%=webSettings.value.name%></title>
-  <% /* Viewport tag for sensible mobile support */ %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="<%=webSettings.value.description%>">
-  <meta name="author" content="ZiniSoft.NET">
-
-  <link rel="icon" href="/images/logo-light.png">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/frontend/stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="/frontend/stylesheets/font-awesome.css">
-  <link rel="stylesheet" href="/frontend/stylesheets/slick.css">
+  <meta name="author" content="Group 6">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    
+  <link rel="stylesheet" href="/vendors/megamenu/stylesheets/screen.css">
+  <link rel="stylesheet" href="/vendors/loaders/stylesheets/screen.css">
+  <link rel="stylesheet" href="/vendors/cubeportfolio/cubeportfolio.min.css">
+  <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="/vendors/revolution-slider/css/navigation.css">
+  <link rel="stylesheet" href="/vendors/tabs/css/responsive-tabs.css">
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="/frontend/css/corporate.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/theme-default.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/simple-line-icons.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/et-line-font.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/shortcodes.css" type="text/css">
+  <link rel="stylesheet" href="/frontend/css/custom.css" type="text/css">
   <%- blocks.localCss %>
-  <link rel="stylesheet" href="/frontend/stylesheets/style.css">
 </head>
 
 <body class="skin-default card-no-border">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">CookCook</p>
-        </div>
-    </div>
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <section id="wrapper">
+      <%- partial('../partials/header-login.ejs') %>
       <%- body %>
+      <%- partial('../partials/footer.ejs') %>
     </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/dependencies/sails.io.js"></script>
-    <script src="/dependencies/lodash.js"></script>
+   
+    <script src="/vendors/jquery/jquery-3.2.1.min.js"></script>
     <script src="/vendors/moment/moment.min.js"></script>
-    <script src="/frontend/javascripts/bootstrap.min.js"></script>
-    <script src="/frontend/javascripts/popper.min.js"></script>
-    <script src="/frontend/javascripts/slick.js"></script>
-    <!--Custom JavaScript -->
-  
-    <%- blocks.localScripts %>
-    <script src="/frontend/javascripts/customs.js"></script>
+    <script src="/vendors/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+    <script src="/vendors/less/less.min.js"></script>
+    <script src="/vendors/functions/functions.js"></script>
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/vendors/tabs/js/responsive-tabs.min.js"></script>
+    <script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/vendors/sticky/js/jquery.sticky.js"></script>
+    <script src="/vendors/validate/validator.min.js"></script>
+    <script src="/dependencies/lodash.js"></script>
     <script src="/dependencies/cloud.js"></script>
     <script src="/js/frontend/cloud.setup.js"></script>
     <script src="/js/frontend/base.js"></script>
+    <script src="/js/i18n.js"></script>
+    <!-- <script src="/frontend/vendor/js/jquery.magnific-popup.min.js"></script> -->
+    <script src="/vendors/megamenu/js/main.js"></script> 
+    <script type="text/javascript" src="/vendors/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/vendors/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/frontend/js/custom.js"></script>
+    <!-- endbuild -->  
+    <!--Custom JavaScript -->
+    <%- blocks.localScripts %>
     <script src="/js/frontend/main.js"></script>
-  <script>
-    var EKPAction = '';
-  </script>
+    <script>
+        var EKPAction = '';
+    </script>
 </body>
 
 </html>

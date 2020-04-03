@@ -1,0 +1,56 @@
+<div class="wrapper-boxed">
+  <div class="site-wrapper">
+    <section class="sec-padding">
+      <div class="container"> 
+        <form id="frmLogin" data-toggle="validator" role="form">
+          <input type='hidden' name='_csrf' value='<%= _csrf %>'> 
+          <div class="col-md-12">  
+            <div class="clearfix"></div>
+            <br/> <br/>
+            <div class="form-body border-light">
+            
+            <div class="row">    
+              <div class="col-md-12">
+              <label class="lable-text" for="name">Email Address</label>
+              <input id="emailAddress" class="input-1" type="text" placeholder="Email Address" name="emailAddress">
+              </div>
+              <div class="col-md-12">
+              <label class="lable-text" for="email"> Password</label>
+              <input id="email" class="input-1" type="password" placeholder="Password" name="password">
+              </div>
+            </div>
+            <div id="loginFail" class="alert d-none" role="alert">
+                <i class="mdi mdi-alert-circle"></i>
+                <%= __('Login fail! Please check your email and password!')%>
+            </div>
+            <!-- end row -->
+
+              <div class="row">
+              <br/> 
+            <div class="col-md-7 text-left">
+            <button class="btn btn-dark-3 btn-half-fullwidth uppercase" type="submit">Login</button>
+            </div>
+
+            <div class="col-md-5 text-left">
+              <label class="pull-right">
+              <input id="user_inline_active" class="boolean optional" type="checkbox" value="1" name="user_inline[active]">
+              Remember me
+              </label>
+            </div>
+
+            <div class="col-md-12"><small><a href="#">Forget Password</a></small></div>
+            </div>
+            <!-- end row -->
+
+            </div>
+            <!--end form body-->
+          </div>
+        </form>
+        <!--end item-->
+      </div>
+    </section>
+  </div>
+  <!--end site wrapper--> 
+</div>
+
+<!--end wrapper boxed--> 

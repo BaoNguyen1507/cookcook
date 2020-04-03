@@ -22,6 +22,25 @@ module.exports = {
     // GET CURRENT SESSION OF BRANCH
     const params = inputs.req.allParams();
     
+    let webSettings = await SettingService.get({ key: 'web' });
+    let page = params.page ? parseInt(params.page) : 1;
+
+    let catID = params.category ? params.category : null;
+		let limit = 10;
+    let skip = (page - 1) * limit;
+    let where = {};
+
+    if (catID != null) {
+      where = {
+        category : catID
+      }
+    }
+    
+    // PREPARE DATA NEWS PAGING
+    let listNews = await PostCategoryService.find(where);
+    let lengthOfPage = listNews.length;
+    //GET NUMBER OF PAGES.
+    var numberOfPages = Math.floor((lengthOfPage + limit - 1) / limit);
    
     let _default = await {
       userActive: inputs.req.me,
@@ -29,6 +48,9 @@ module.exports = {
       url: inputs.req.path,
       lang: i18n.i18n.defaultLocale,
       moduleActive: inputs.req.options,
+      numberOfPages: numberOfPages,
+      pageAcitve: page,
+      categoryActive: catID,
     };
     //set curr language equal with defaultLocale
     inputs.req.setLocale(i18n.i18n.defaultLocale);

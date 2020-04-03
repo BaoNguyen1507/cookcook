@@ -1,0 +1,100 @@
+<% block('localCss', '<link rel="stylesheet" href="/vendors/dropify/dropify.min.css">') %>
+<% block('localCss', '<link rel="stylesheet" href="/vendors/formvalidation/formValidation.css">') %>
+<section>
+    <div class="pagenation-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ol class="breadcrumb">
+                        <li><a href="/"><%= __('Trang chủ')%></a></li>
+                        <li class="current"><a href="/user/profile"><%= __('Thông tin cá nhân')%></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+        <!--end section-->
+<section class="sec-tpadding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 margin-bottom animate-in" data-anim-type="fade-in-left" data-anim-delay="100"> <img src="<%= userActive ? userActive.avatar : ''%>" alt="" class="img-responsive"/> </div>
+            <!--end item-->
+            <div class="col-md-6 margin-bottom animate-in" data-anim-type="fade-in-right" data-anim-delay="100">
+                    <div class="container"> 
+                        <div class="col-md-6">  
+                            <div class="form-body bg-white">
+                                <form autocomplete="off" id="formUser" class="" enctype="multipart/form-data" data-edit-id="<%= userActive ? userActive.id : ''%>" 
+                                    data-fv-message="<%= __('Invalidate') %>" data-fv-icon-valid="glyphicon glyphicon-ok"
+                                    data-fv-icon-invalid="glyphicon glyphicon-remove" data-fv-icon-validating="glyphicon glyphicon-refresh"
+                                    data-fv-live="enabled" data-manner="edit">
+                                    <input type='hidden' name='_csrf' value='<%= _csrf %>'> 
+                                    <input id="id" name="id" value="<%= userActive ? userActive.id : ''%>" hidden />
+                                    <div class="row">    
+                                        <div class="col-md-12">
+                                        <label class="lable-text" for="name">First Name</label>
+                                        <input id="firstName" value = " <%= userActive ? userActive.firstName : ''%>" class="input-1" type="text" placeholder="Enter first name" name="firstName">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="lable-text" for="name">Last Name</label>
+                                            <input id="lastName" value = "<%= userActive ? userActive.lastName : ''%>" class="input-1" type="text" placeholder="Enter last name" name="lastName">
+                                            </div>
+                                        <div class="col-md-12">
+                                        <label class="lable-text" for="email"> Email Address</label>
+                                        <input id="emailAddress" value="<%= userActive ? userActive.emailAddress : ''%>" class="input-1" type="text" placeholder="Enter your email" name="emailAddress">
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                
+                                    <div class="row">    
+                                        <div class="col-md-12">
+                                            <label class="lable-text" for="phone">Phone Number</label>
+                                            <input id="phone" value="<%= userActive ? userActive.phone : ''%>" class="input-1" type="text" placeholder="Enter phone number" name="phone">
+                                        </div>
+                                    </div>
+                                    <div class="row">    
+                                        <div class="col-md-12">
+                                            <label class="lable-text" for="birthday">Date of birth</label>
+                                            <input id="birthday" value="<%= userActive ? userActive.birthday : ''%>" class="input-1" type="date"  name="birthday">
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                    
+                                    <div class="row">    
+                                        <div class="col-md-12">
+                                            <label class="lable-text" for="address">Address</label>
+                                            <input id="address" value="<%- userActive ? userActive.address : ''%>" class="input-1" placeholder="Enter your address" name="address" />
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="alert alert-dismissible hidden" role="alert" data-alert-update="<%= __('Update successfully') %>">
+                                                <%= __('Update successfully') %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <br/> 
+                                        <div class="col-md-12 text-center">
+                                            <button class="btn btn-gyellow btn-fullwidth uppercase" id="btnFormUser" type="submit"><i class="fa fa-paper-plane"></i>Update</button>
+                                        </div>
+                                    </div>
+                                    <!-- end row -->
+                                </form>   
+                            </div>
+                            <!--end form body-->
+                        </div>
+                        <!--end item-->
+                    </div>
+            </div>
+            <!--end item--> 
+        </div>
+    </div>
+</section>
+<% block('localScripts', '<script src="/vendors/formvalidation/formValidation.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/formvalidation/framework/bootstrap4.min.js"></script>') %>
+<% block('localScripts', '<script src="/vendors/dropify/dropify.min.js"></script>') %>
+<% block('localScripts', '<script src="/js/frontend/user/profile.js"></script>') %>

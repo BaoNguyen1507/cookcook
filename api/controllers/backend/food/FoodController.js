@@ -63,7 +63,7 @@ module.exports = {
     if (!foods) {
       return res.notFound(ErrorMessages.FOOD_NOT_FOUND);
     }
-    // RETURN DATA FOOD
+   
     return res.json(foods);
   },
 

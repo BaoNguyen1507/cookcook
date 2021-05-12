@@ -10,7 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "async": "2.0.1",
     "bcrypt": "^3.0.6",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "connect-redis": "3.2.0",
     "convert-excel-to-json": "^1.6.1",
     "dateformat": "^3.0.3",

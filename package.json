@@ -36,7 +36,7 @@
     "sails-hook-organics": "^0.16.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^2.0.0",
-    "sharp": "^0.23.3",
+    "sharp": "^0.30.5",
     "stripe": "^8.17.0"
   },
   "devDependencies": {
